@@ -1,0 +1,82 @@
+{
+  "name": "SunWestPOC",
+  "description": "Orchestration Process",
+  "main": "This is the MAIN File.xaml",
+  "dependencies": {
+    "ActivitiesMyGmailPackage": "[2.0.20]",
+    "ActivitiesSunWest": "[1.0.2]",
+    "Google.Apis.Drive.v3": "[1.49.0.2145]",
+    "jQuery.UI.Combined": "[1.12.0]",
+    "Microsoft.Activities.Extensions": "[2.0.6.9]",
+    "Newtonsoft.Json": "[12.0.3]",
+    "RestSharp": "[106.3.1]",
+    "Swashbuckle.AspNetCore.SwaggerUI": "[5.6.3]",
+    "UiPath.AmazonWebServices.Activities": "[1.2.3]",
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.Excel.Activities": "[2.9.3]",
+    "UiPath.Form.Activities": "[1.1.8]",
+    "UiPath.GSuite.Activities": "[1.8.0]",
+    "UiPath.Mail.Activities": "[1.9.3]",
+    "UiPath.PDF.Activities": "[3.3.0]",
+    "UiPath.Persistence.Activities": "[1.1.9]",
+    "UiPath.System.Activities": "[20.10.1]",
+    "UiPath.UIAutomation.Activities": "[20.10.6]",
+    "UiPath.WebAPI.Activities": "[1.6.0]",
+    "UiPathTeam.Gmail.Activities": "[1.0.6822.33137]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.6.0.0",
+  "projectVersion": "1.1.46",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": false,
+    "supportsPersistence": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "d64349af-fc86-45f7-a609-cb91c72ee960",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Main_THAT WORKS.xaml",
+      "uniqueId": "0286de2c-dbbb-44b5-841c-c17775d2ca64",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "This is the MAIN File.xaml",
+      "uniqueId": "de019c29-5697-4878-851d-4e71a8952e39",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
+}

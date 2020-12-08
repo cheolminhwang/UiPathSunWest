@@ -1,0 +1,50 @@
+{
+    "documentType": "",
+    "brokerAccess": false,
+    "safeBoxJson": null,
+    "active": true,
+    "description": "test file2",
+    "investorAccess": false,
+    "dateCreated": 1604066224,
+    "filename": "TESTPDF.pdf",
+    "borrowerUpload": false,
+    "size": 73315,
+    "reviewed": false,
+    "documentId": 109525462,
+    "conditions": [],
+    "loanNumber": "100100100100",
+    "borrowerAccess": false,
+    "boxId": "",
+    "createdByUid": "6AB2"
+}
+
+
+@"{
+  ""MessageId"" : 203,
+  ""EmailFrom"" : ""Jane Doe <jane@doe.com>"",
+  ""EmailTo"" : ""\""customercare@swmc.com\"" <customercare@swmc.com>"",
+  ""EmailCC"" : ""string"",
+  ""EmailBCC"" : ""string"",
+  ""EmailSubject"" : ""100100100100 123 Main St"",
+  ""EmailContent"" : ""Hello, Please see attached."",
+  ""Attachments"" : [ {
+    ""id"" : 227,
+    ""mimetype"" : ""application/pdf"",
+    ""filename"" : ""Amendment - Buyer Only.PDF"",
+    ""downloadUrl"" : ""https://0wayqt4bgj.execute-api.us-east-1.amazonaws.com/dev/attachments/227""
+  }, {
+    ""id"" : 228,
+    ""mimetype"" : ""application/pdf"",
+    ""filename"" : ""Property Taxes.PDF"",
+    ""downloadUrl"" : ""https://0wayqt4bgj.execute-api.us-east-1.amazonaws.com/dev/attachments/228""
+  } ],
+  ""LoanNumber"" : 0,
+  ""ConditionCode"" : ""20K7"",
+  ""Categories"" : [ ""[\""C01\"",\""C02\""]"" ],
+  ""Actions"" : [ ""[\""A01\"",\""E02\"",\""L01c\""]"" ],
+  ""Sentiment"" : ""neutral"",
+  ""Urgent"" : false,
+  ""Question"" : false,
+  ""Request"" : false,
+  ""TAT"" : 0
+}"
