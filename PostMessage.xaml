@@ -17,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>868,4805.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>768,894.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -91,46 +91,29 @@
       <AssemblyReference>UiPath.Web</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- Actions : String[]  e.g {&quot;A01&quot;,&quot;E02&quot;,&quot;L01a&quot;}&#xA;- Categories : String[]&#xA;- Image_upload_ID : String[]&#xA;- ConditionCode : String&#xA;- KognivoKey: String&#xA;- KognivoURL: String&#xA;- LoanNumber: String&#xA;- MsgID: String&#xA;- Question: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Request: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Sentiment: String    &#xA;- Urgent: String     e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;&#xA;Output:&#xA;- argIntStatusCode : Int" sap:VirtualizedContainerService.HintSize="878.4,4740.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- Actions : String[]  e.g {&quot;A01&quot;,&quot;E02&quot;,&quot;L01a&quot;}&#xA;- Categories : String[]&#xA;- Image_upload_ID : String[]&#xA;- ConditionCode : String&#xA;- KognivoKey: String&#xA;- KognivoURL: String&#xA;- LoanNumber: String&#xA;- MsgID: String&#xA;- Question: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Request: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Sentiment: String    &#xA;- Urgent: String     e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;&#xA;Output:&#xA;- argIntStatusCode : Int" sap:VirtualizedContainerService.HintSize="475.2,829.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="836.8,4380" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,420.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="800,4148.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="800,4086.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="msgJSON" />
             <Variable x:TypeArguments="x:String" Name="str_Result" />
             <Variable x:TypeArguments="x:String" Name="strBody" />
-            <Variable x:TypeArguments="x:String" Name="strTmp" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="758.4,161.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="758.4,99.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:String">[strTmp]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[JsonConvert.SerializeObject( Actions)]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">["{"+ """actions"""+": ["+"""A02"""+","+"""E01"""+"]}"]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
@@ -523,10 +506,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="803.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,256" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -540,7 +523,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Something not good with the messagid:&quot;+MsgID]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Something not good with the messagid:&quot;+MsgID + &quot; e&lt;&quot; + exception.ToString + &quot;&gt;&quot;]" />
             </Sequence>
           </ActivityAction>
         </Catch>
