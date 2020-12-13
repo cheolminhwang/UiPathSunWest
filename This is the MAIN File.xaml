@@ -231,53 +231,53 @@
             <av:PointCollection x:Key="ConnectorLocation">310,74.1333333333333 310,96.6666666666667 310.266666666667,96.6666666666667</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="866.4,1344" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="827,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;inside get TransactionItem   .&quot;]" />
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="827,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="get TransactionItem  " />
-          <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue." DisplayName="Get transaction item" sap:VirtualizedContainerService.HintSize="827,79" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[Qname]" TransactionItem="[TransactionItem]">
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="824.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;inside get TransactionItem   .&quot;]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="824.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="get TransactionItem  " />
+          <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue." DisplayName="Get transaction item" sap:VirtualizedContainerService.HintSize="824.8,82.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[Qname]" TransactionItem="[TransactionItem]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetQueueItem>
-          <If Condition="[TransactionItem is Nothing]" sap:VirtualizedContainerService.HintSize="827,883" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[TransactionItem is Nothing]" sap:VirtualizedContainerService.HintSize="824.8,893.6" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="478,735" sap2010:WorkflowViewState.IdRef="Sequence_185">
+              <Sequence sap:VirtualizedContainerService.HintSize="476.8,744" sap2010:WorkflowViewState.IdRef="Sequence_185">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="TransactionItem is Nothing" />
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,542" sap2010:WorkflowViewState.IdRef="CommentOut_53">
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="435.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="TransactionItem is Nothing" />
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,548.8" sap2010:WorkflowViewState.IdRef="CommentOut_54">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,464" sap2010:WorkflowViewState.IdRef="Sequence_186">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,470.4" sap2010:WorkflowViewState.IdRef="Sequence_187">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GMailMessgeQueue">
+                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="GMailMessgeQueue">
                         <ui:AddQueueItem.ItemInformation>
                           <InArgument x:TypeArguments="x:String" x:Key="MessageId">175f6fafab9072aa</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="hasAttachment">True</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="documentPortalLink">None</InArgument>
                         </ui:AddQueueItem.ItemInformation>
                       </ui:AddQueueItem>
-                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue." DisplayName="Get transaction item" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="GetQueueItem_4" QueueType="[Qname]" TransactionItem="[TransactionItem]">
+                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Get a transaction item from the specified Orchestrator queue." DisplayName="Get transaction item" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_4" QueueType="[Qname]" TransactionItem="[TransactionItem]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:GetQueueItem>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_91">
+                      <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_91">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[emailID]</OutArgument>
                         </Assign.To>
@@ -285,20 +285,20 @@
                           <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("MessageId").ToString]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Fatal" Message="[&quot;Adding temporary transaction Item: &lt;&lt;==== This step needs to be removed&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Fatal" Message="[&quot;Adding temporary transaction Item: &lt;&lt;==== This step needs to be removed&quot;]" />
                     </Sequence>
                   </ui:CommentOut.Body>
                 </ui:CommentOut>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_43">
+              <Sequence sap:VirtualizedContainerService.HintSize="304,255.2" sap2010:WorkflowViewState.IdRef="Sequence_43">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[emailID]</OutArgument>
                   </Assign.To>
@@ -306,7 +306,7 @@
                     <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("MessageId").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Email ID: &quot;+emailID]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Email ID: &quot;+emailID]" />
               </Sequence>
             </If.Else>
           </If>
@@ -551,14 +551,14 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="1914,638.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                          <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="1913.6,640" sap2010:WorkflowViewState.IdRef="Sequence_146">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetQueueItem_3" QueueType="SunWestProcess" TransactionItem="[TransactionItem_task]" />
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DocumentLabel workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="DocumentLabel.xaml">
+                            <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_3" QueueType="SunWestProcess" TransactionItem="[TransactionItem_task]" />
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DocumentLabel workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="DocumentLabel.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem_task]</InArgument>
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
@@ -586,7 +586,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <If Condition="[TransactionItem_task.SpecificContent(&quot;First Action&quot;) is Nothing]" DisplayName="Action 1 is Empty?" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_52">
+                            <If Condition="[TransactionItem_task.SpecificContent(&quot;First Action&quot;) is Nothing]" DisplayName="Action 1 is Empty?" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_52">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -594,7 +594,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_89">
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_89">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Action1]</OutArgument>
                                   </Assign.To>
@@ -606,13 +606,13 @@
                                 </Assign>
                               </If.Then>
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="304,154" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                                <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_183">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_90">
+                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_90">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[Action1]</OutArgument>
                                     </Assign.To>
@@ -623,7 +623,7 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <If Condition="[TransactionItem_task.SpecificContent(&quot;Second Action&quot;) is Nothing]" DisplayName="Action 2 is Empty?" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_34">
+                            <If Condition="[TransactionItem_task.SpecificContent(&quot;Second Action&quot;) is Nothing]" DisplayName="Action 2 is Empty?" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_34">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -631,7 +631,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_83">
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_83">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Action2]</OutArgument>
                                   </Assign.To>
@@ -643,13 +643,13 @@
                                 </Assign>
                               </If.Then>
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="304,154" sap2010:WorkflowViewState.IdRef="Sequence_173">
+                                <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_173">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_84">
+                                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_84">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[Action2]</OutArgument>
                                     </Assign.To>
@@ -660,7 +660,7 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <If Condition="[TransactionItem_task.SpecificContent(&quot;Third Action&quot;) is Nothing]" DisplayName="Action 3 is Empty?" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_35">
+                            <If Condition="[TransactionItem_task.SpecificContent(&quot;Third Action&quot;) is Nothing]" DisplayName="Action 3 is Empty?" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_35">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -697,7 +697,7 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Actions to Take:&quot;+Environment.NewLine+&quot;Action 1: &quot;+Action1+Environment.NewLine+&quot;Action 2:&quot;+Action2+Environment.NewLine+&quot;Action 3: &quot;+Action3]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Actions to Take:&quot;+Environment.NewLine+&quot;Action 1: &quot;+Action1+Environment.NewLine+&quot;Action 2:&quot;+Action2+Environment.NewLine+&quot;Action 3: &quot;+Action3]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -706,23 +706,23 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
                           </Sequence>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1914,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_49">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1913.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_49">
                             <ui:CommentOut.Body>
-                              <Sequence DisplayName="AWS" sap:VirtualizedContainerService.HintSize="554.666666666667,339.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_178">
+                              <Sequence DisplayName="AWS" sap:VirtualizedContainerService.HintSize="554.4,340.8" sap2010:WorkflowViewState.IdRef="Sequence_178">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_48">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_48">
                                   <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_177">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AWS_secret access key" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secure_string]" Username="[aws_id]" />
+                                      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AWS_secret access key" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secure_string]" Username="[aws_id]" />
                                     </Sequence>
                                   </ui:CommentOut.Body>
                                   <sap:WorkflowViewStateService.ViewState>
@@ -732,7 +732,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:CommentOut>
-                                <Assign sap:VirtualizedContainerService.HintSize="512.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_88">
+                                <Assign sap:VirtualizedContainerService.HintSize="512.8,60" sap2010:WorkflowViewState.IdRef="Assign_88">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="ss:SecureString">[secure_string]</OutArgument>
                                   </Assign.To>
@@ -740,21 +740,21 @@
                                     <InArgument x:TypeArguments="ss:SecureString">[new System.Net.NetworkCredential("","AKIAWSESEBH56QITJLOH").SecurePassword]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_50">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_50">
                                   <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,416" sap2010:WorkflowViewState.IdRef="Sequence_179">
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,417.6" sap2010:WorkflowViewState.IdRef="Sequence_179">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uaa:AWSScope IAMRole="{x:Null}" AccessKeyId="[aws_id]" DisplayName="Amazon Web Services Scope" sap:VirtualizedContainerService.HintSize="434,324" sap2010:WorkflowViewState.IdRef="AWSScope_1" Region="us-east-1" SecretAccessKey="[secure_string]">
+                                      <uaa:AWSScope IAMRole="{x:Null}" AccessKeyId="[aws_id]" DisplayName="Amazon Web Services Scope" sap:VirtualizedContainerService.HintSize="433.6,326.4" sap2010:WorkflowViewState.IdRef="AWSScope_1" Region="us-east-1" SecretAccessKey="[secure_string]">
                                         <uaa:AWSScope.Body>
                                           <ActivityAction x:TypeArguments="uac:AWSCmd">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="uac:AWSCmd" Name="AmazonWebServicesScopePropertyTag" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,238" sap2010:WorkflowViewState.IdRef="Sequence_171">
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,240" sap2010:WorkflowViewState.IdRef="Sequence_171">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="test" />
                                                 <Variable x:TypeArguments="uam:AWSS3Bucket" Name="aws_attachment_bucket" />
@@ -765,9 +765,9 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <uaasb:AWSGetBucket BucketDetails="{x:Null}" Bucket="[aws_attachment_bucket]" BucketName="email-automation-attachments" DisplayName="Get Bucket" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AWSGetBucket_1" IncludeDetails="False" />
-                                              <uaaso:AWSGetObject Bucket="[aws_attachment_bucket]" DisplayName="Get Object" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AWSGetObject_1" IncludeVersions="False" Object="[aws_object_output]" ObjectKeyName="image004.jpg" />
-                                              <uaaso:AWSDownloadSingleObject ObjectVersionID="{x:Null}" Timeout="{x:Null}" DisplayName="Download Object to File" FileName="https://email-automation-attachments.s3.amazonaws.com/json.txt" FilePath="[test]" Folder="C:\Users\kayla\Documents\SunWest" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AWSDownloadSingleObject_1" Object="[aws_object_output]" Overwrite="False" />
+                                              <uaasb:AWSGetBucket BucketDetails="{x:Null}" Bucket="[aws_attachment_bucket]" BucketName="email-automation-attachments" DisplayName="Get Bucket" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AWSGetBucket_1" IncludeDetails="False" />
+                                              <uaaso:AWSGetObject Bucket="[aws_attachment_bucket]" DisplayName="Get Object" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AWSGetObject_1" IncludeVersions="False" Object="[aws_object_output]" ObjectKeyName="image004.jpg" />
+                                              <uaaso:AWSDownloadSingleObject ObjectVersionID="{x:Null}" Timeout="{x:Null}" DisplayName="Download Object to File" FileName="https://email-automation-attachments.s3.amazonaws.com/json.txt" FilePath="[test]" Folder="C:\Users\kayla\Documents\SunWest" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AWSDownloadSingleObject_1" Object="[aws_object_output]" Overwrite="False" />
                                             </Sequence>
                                           </ActivityAction>
                                         </uaa:AWSScope.Body>
@@ -790,15 +790,15 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:CommentOut>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1914,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_52">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1913.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_52">
                             <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="538.666666666667,144.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="538.4,145.6" sap2010:WorkflowViewState.IdRef="Sequence_181">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[actual_template]" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[actual_template]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -830,16 +830,16 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:CommentOut>
-                          <Sequence DisplayName="Action 1 Conditions " sap:VirtualizedContainerService.HintSize="1914,822" sap2010:WorkflowViewState.IdRef="Sequence_147">
+                          <Sequence DisplayName="Action 1 Conditions " sap:VirtualizedContainerService.HintSize="1913.6,804.8" sap2010:WorkflowViewState.IdRef="Sequence_147">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[Action1=&quot;A01&quot;]" sap:VirtualizedContainerService.HintSize="1872,730" sap2010:WorkflowViewState.IdRef="If_37">
+                            <If Condition="[Action1=&quot;A01&quot;]" sap:VirtualizedContainerService.HintSize="1861.6,712" sap2010:WorkflowViewState.IdRef="If_37">
                               <If.Then>
-                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UploadDocument workflow" sap:VirtualizedContainerService.HintSize="352,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="SWMC_Gmail API_new\UploadDocument.xaml">
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UploadDocument workflow" sap:VirtualizedContainerService.HintSize="350.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="SWMC_Gmail API_new\UploadDocument.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InArgument x:TypeArguments="x:String" x:Key="strDocPath">C:\tmp\TESTPDF3.pdf</InArgument>
                                     <OutArgument x:TypeArguments="x:String" x:Key="strDocId" />
@@ -855,9 +855,9 @@
                                 </ui:InvokeWorkflowFile>
                               </If.Then>
                               <If.Else>
-                                <If Condition="[Action1=&quot;E01&quot;]" sap:VirtualizedContainerService.HintSize="1474,576" sap2010:WorkflowViewState.IdRef="If_36">
+                                <If Condition="[Action1=&quot;E01&quot;]" sap:VirtualizedContainerService.HintSize="1467.2,562.4" sap2010:WorkflowViewState.IdRef="If_36">
                                   <If.Then>
-                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="SendThreading.xaml">
+                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
                                         <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">727481966156-kf0jhl0fu6mthorh6csfdond6eev7mgm.apps.googleusercontent.com</InArgument>
@@ -873,9 +873,9 @@
                                     </ui:InvokeWorkflowFile>
                                   </If.Then>
                                   <If.Else>
-                                    <If Condition="[Action1=&quot;E02&quot;]" sap:VirtualizedContainerService.HintSize="1094,422" sap2010:WorkflowViewState.IdRef="If_47">
+                                    <If Condition="[Action1=&quot;E02&quot;]" sap:VirtualizedContainerService.HintSize="1089.6,412.8" sap2010:WorkflowViewState.IdRef="If_47">
                                       <If.Then>
-                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="SendThreading.xaml">
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">727481966156-kf0jhl0fu6mthorh6csfdond6eev7mgm.apps.googleusercontent.com</InArgument>
@@ -891,9 +891,9 @@
                                         </ui:InvokeWorkflowFile>
                                       </If.Then>
                                       <If.Else>
-                                        <If Condition="[Action1=&quot;E03&quot;]" sap:VirtualizedContainerService.HintSize="714,268" sap2010:WorkflowViewState.IdRef="If_46">
+                                        <If Condition="[Action1=&quot;E03&quot;]" sap:VirtualizedContainerService.HintSize="712,263.2" sap2010:WorkflowViewState.IdRef="If_46">
                                           <If.Then>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="SendThreading.xaml">
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                                 <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">727481966156-kf0jhl0fu6mthorh6csfdond6eev7mgm.apps.googleusercontent.com</InArgument>
@@ -2105,7 +2105,7 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_16">
                                             <ui:CommentOut.Body>
-                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="525.6,760" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="524.8,760" sap2010:WorkflowViewState.IdRef="Sequence_84">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2348,38 +2348,84 @@
                                           </ui:MultipleAssign>
                                           <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" TimeoutMs="{x:Null}" sap2010:Annotation.AnnotationText="Has an extra approval column added to the materials table; disables the other fields so they can't be modified. The rows are pre-populated using the Form Data input - a JArray is extracted from the JObject representing the data retrieved from the collectionTask. The data is extracted from the collectionTask in-place, because an in-scope JArray variable causes the serialization of the Main workflow to fail." DisplayName="Create Approval Task" FormLayout="%[{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:1,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;From&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strfrom&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;labelWidth&quot;:9,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;To&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strto&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;labelWidth&quot;:9,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;CC&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;cc&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;labelWidth&quot;:9,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Subject&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strsubject&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;labelWidth&quot;:9,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}]}]]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Message&quot;,&quot;key&quot;:&quot;tab2&quot;,&quot;components&quot;:[{&quot;title&quot;:&quot;Content&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:true,&quot;key&quot;:&quot;content1&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Content&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Content&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strcontent&quot;,&quot;type&quot;:&quot;textarea&quot;,&quot;labelWidth&quot;:8,&quot;rows&quot;:5,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true}],&quot;collapsed&quot;:false},{&quot;title&quot;:&quot;Attachments&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:true,&quot;key&quot;:&quot;attachments&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Attachments&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;passwd&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Attachment&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;href&quot;,&quot;value&quot;:&quot;{{row.urlattach}}&quot;},{&quot;attr&quot;:&quot;target&quot;,&quot;value&quot;:&quot;_blank&quot;}],&quot;content&quot;:&quot;{{row.attachfn}}&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;attachment&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Attachment&quot;,&quot;hidden&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;attachfn&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Password&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;password&quot;,&quot;type&quot;:&quot;password&quot;,&quot;input&quot;:true,&quot;protected&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Override&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkboxpw&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;urlattach&quot;,&quot;hidden&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;urlattach&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;attachfn&quot;,&quot;hidden&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;attachfn1&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Protected&quot;,&quot;hidden&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;protected0&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Protected&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;protected&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}],&quot;calculateServer&quot;:false}],&quot;collapsed&quot;:false},{&quot;title&quot;:&quot;Loan Number&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;loanNumber&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Loan Number&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Override&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkboxloannum&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;New Loan Number&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;loannumber_new&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;checkboxloannum&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Loan Number&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;loannumber&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}]}]},{&quot;label&quot;:&quot;Process&quot;,&quot;key&quot;:&quot;process&quot;,&quot;components&quot;:[{&quot;title&quot;:&quot;ETA&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:true,&quot;key&quot;:&quot;eta1&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;ETA&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Override&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkboxeta&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table5&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:2,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Days&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;new_days&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;checkboxeta&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Daysi&quot;,&quot;hidden&quot;:true,&quot;tableView&quot;:false,&quot;delimiter&quot;:false,&quot;requireDecimal&quot;:false,&quot;key&quot;:&quot;intdays&quot;,&quot;conditional&quot;:{&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;number&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Hours&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;new_hours&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;checkboxeta&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Hoursi&quot;,&quot;hidden&quot;:true,&quot;tableView&quot;:false,&quot;delimiter&quot;:false,&quot;requireDecimal&quot;:false,&quot;key&quot;:&quot;inthours&quot;,&quot;conditional&quot;:{&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;number&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Days&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;days&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Hours&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;hours&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}]},{&quot;components&quot;:[]}]]}],&quot;collapsed&quot;:false},{&quot;title&quot;:&quot;AI Recommended Categories&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;identifiedCategories&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;AI Recommended Categories&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;key&quot;:&quot;datagridcat&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;acat&quot;,&quot;hidden&quot;:true,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;labelcat&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Category&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;{{row.acat}}&quot;,&quot;refreshOnChange&quot;:true,&quot;hidden&quot;:true,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;label&quot;:&quot;Category&quot;,&quot;labelPosition&quot;:&quot;left-left&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;acat&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;labelWidth&quot;:5,&quot;labelMargin&quot;:2,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}],&quot;calculateServer&quot;:false}]},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Please review below actions. You may check/uncheck preselected actions&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;calculateServer&quot;:false},{&quot;title&quot;:&quot;AI Recommended Actions&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;panel&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;AI Recommended Actions&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;actions&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Selected&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkbox&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Code&quot;,&quot;hidden&quot;:true,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Code&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true},{&quot;label&quot;:&quot;Action&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Desc&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true}],&quot;calculateServer&quot;:false}]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table2&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:2,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Approve&quot;,&quot;disableOnInvalid&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;showValidations&quot;:false,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Once you click on Approve, the above selection actions will be submitted for processing.If you want to change the selection please check the box below.&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html3&quot;,&quot;conditional&quot;:{&quot;show&quot;:false,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Approve&quot;,&quot;theme&quot;:&quot;secondary&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;approve&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;showValidations&quot;:false,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Once you click on Approve, the above selection actions will be submitted for processing.If you want to change the selection please check the box below.&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html4&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false}]}]],&quot;calculateServer&quot;:false},{&quot;title&quot;:&quot;Incorrect Category?&quot;,&quot;theme&quot;:&quot;warning&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;incorrectCategory&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Incorrect Category&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Incorrect Identification / Need Adjustment&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;calculateServer&quot;:false}],&quot;calculateServer&quot;:false},{&quot;title&quot;:&quot;Select Categories&quot;,&quot;theme&quot;:&quot;warning&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;trueCategories&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Select Categories&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:false,&quot;reorder&quot;:false,&quot;addAnother&quot;:&quot;Add Another Category&quot;,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;dgNewCat&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Category&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;C01 - Document Received&quot;,&quot;value&quot;:&quot;c01-DocumentReceived&quot;},{&quot;label&quot;:&quot;C02 - Question Related to an unknown condition&quot;,&quot;value&quot;:&quot;C02- Question Related to an unknown condition&quot;},{&quot;label&quot;:&quot;C03 - Question Related to an known condition&quot;,&quot;value&quot;:&quot;c03-QuestionRelatedToAnKnownCondition&quot;},{&quot;label&quot;:&quot;C04 - Question on unknown Condition Resolution ETA&quot;,&quot;value&quot;:&quot;c04-QuestionOnUnknownConditionResolutionEta&quot;},{&quot;label&quot;:&quot;C05a - Question on known Condition Resolution ETA&quot;,&quot;value&quot;:&quot;c05A-QusetionOnKnownConditionResolutionEta&quot;},{&quot;label&quot;:&quot;C05b - Question on CD ETA&quot;,&quot;value&quot;:&quot;c05B-QuestionOnCdEta&quot;},{&quot;label&quot;:&quot;C06a - Question about Docs ETA&quot;,&quot;value&quot;:&quot;c06A-QuestionAboutDocsEta&quot;},{&quot;label&quot;:&quot;C06b - Question on Loan Status&quot;,&quot;value&quot;:&quot;c06B-QuestionOnLoanStatus&quot;},{&quot;label&quot;:&quot;C07 - Question on Payment Status&quot;,&quot;value&quot;:&quot;c07-QuestionOnPaymentStatus&quot;},{&quot;label&quot;:&quot;C08 - Question on Other&quot;,&quot;value&quot;:&quot;c08-QuestionOnOther&quot;},{&quot;label&quot;:&quot;C09 - Response related to a Condition&quot;,&quot;value&quot;:&quot;c09-ResponseRelatedToACondition&quot;},{&quot;label&quot;:&quot;C10 - Request for CTC&quot;,&quot;value&quot;:&quot;c10-RequestForCtc&quot;},{&quot;label&quot;:&quot;C11 - Request to esclalate CD&quot;,&quot;value&quot;:&quot;c11-RequestToEsclalateCd&quot;},{&quot;label&quot;:&quot;C12 - Request to provide Document&quot;,&quot;value&quot;:&quot;c12-RequestToProvideDocument&quot;},{&quot;label&quot;:&quot;C13 - Request to Update Data&quot;,&quot;value&quot;:&quot;c13-RequestToUpdateData&quot;},{&quot;label&quot;:&quot;C14 - Request Other&quot;,&quot;value&quot;:&quot;c14-RequestOther&quot;},{&quot;label&quot;:&quot;C15 - Manual Queue&quot;,&quot;value&quot;:&quot;c15-ManualQueue&quot;},{&quot;label&quot;:&quot;C16 - Manual Queue for TAT&quot;,&quot;value&quot;:&quot;c16-ManualQueueForTat&quot;},{&quot;label&quot;:&quot;C17 - Urgent Queue&quot;,&quot;value&quot;:&quot;c17-UrgentQueue&quot;},{&quot;label&quot;:&quot;C18 - Get Loan Number Queue&quot;,&quot;value&quot;:&quot;c18-GetLoanNumberQueue&quot;},{&quot;label&quot;:&quot;C19 - Request Password Queue&quot;,&quot;value&quot;:&quot;c19-RequestPasswordQueue&quot;},{&quot;label&quot;:&quot;C99 - No Action Required&quot;,&quot;value&quot;:&quot;c99-NoActionRequired&quot;}]},&quot;key&quot;:&quot;categoryadd&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;uniqueOptions&quot;:false}],&quot;calculateServer&quot;:false}]},{&quot;title&quot;:&quot;Select Actions&quot;,&quot;theme&quot;:&quot;warning&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;trueActions&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Select Actions&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Data Grid&quot;,&quot;disableAddingRemovingRows&quot;:false,&quot;reorder&quot;:false,&quot;addAnother&quot;:&quot;Add Another Action&quot;,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;dgNewAct&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Action&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;A01 - Download and Upload Attachments&quot;,&quot;value&quot;:&quot;a01-DownloadAndUploadAttachments&quot;},{&quot;label&quot;:&quot;A02 - Download and Uplaod Attachments (PP)&quot;,&quot;value&quot;:&quot;a02-DownloadAndUplaodAttachmentsPp&quot;},{&quot;label&quot;:&quot;A02a - Send to sysadmin for decryption&quot;,&quot;value&quot;:&quot;a02A-SendToSysadminForDecryption&quot;},{&quot;label&quot;:&quot;E01 - Send standard acknowledgment (no ETA)&quot;,&quot;value&quot;:&quot;e01-SendStandardAcknowledgmentNoEta&quot;},{&quot;label&quot;:&quot;E02 - Send acknowledgment with ETA&quot;,&quot;value&quot;:&quot;e02-SendAcknowledgmentWithEta&quot;},{&quot;label&quot;:&quot;E03 - Respond to sender (Template)&quot;,&quot;value&quot;:&quot;e03-RespondToSenderTemplate&quot;},{&quot;label&quot;:&quot;L01 - Document Link Processing&quot;,&quot;value&quot;:&quot;l01-DocumentLinkProcessing&quot;},{&quot;label&quot;:&quot;L01a - Document Processing for Zix&quot;,&quot;value&quot;:&quot;l01A-DocumentProcessingForZix&quot;},{&quot;label&quot;:&quot;L01b - Document Processing for Outlook&quot;,&quot;value&quot;:&quot;l01B-DocumentProcessingForOutlook&quot;},{&quot;label&quot;:&quot;L01c - Document Processing for Qualia&quot;,&quot;value&quot;:&quot;l01C-DocumentProcessingForQualia&quot;},{&quot;label&quot;:&quot;L01d - Document Processing for DHI Title&quot;,&quot;value&quot;:&quot;l01D-DocumentProcessingForDhiTitle&quot;},{&quot;label&quot;:&quot;L01e - Document Processing for Citrix&quot;,&quot;value&quot;:&quot;l01E-DocumentProcessingForCitrix&quot;}]},&quot;key&quot;:&quot;actionadd&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;uniqueOptions&quot;:false}],&quot;calculateServer&quot;:false}]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:2,&quot;numCols&quot;:2,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;Adjust&quot;,&quot;showValidations&quot;:false,&quot;theme&quot;:&quot;warning&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;adjust&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;One you click on Adjust, your selected categories will be submitted for processing.&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false}]}],[{&quot;components&quot;:[{&quot;label&quot;:&quot;Adjust&quot;,&quot;showValidations&quot;:false,&quot;theme&quot;:&quot;secondary&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;adjust1&quot;,&quot;conditional&quot;:{&quot;show&quot;:false,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;One you click on Adjust, your selected categories will be submitted for processing.&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html2&quot;,&quot;conditional&quot;:{&quot;show&quot;:false,&quot;when&quot;:&quot;incorrectIdentificationNeedAdjustment&quot;,&quot;eq&quot;:&quot;true&quot;},&quot;type&quot;:&quot;htmlelement&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false}]}]],&quot;calculateServer&quot;:false}]},{&quot;label&quot;:&quot;Misc&quot;,&quot;key&quot;:&quot;misc&quot;,&quot;components&quot;:[{&quot;title&quot;:&quot;Email Template&quot;,&quot;theme&quot;:&quot;primary&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;emailTemplate1&quot;,&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Email Template&quot;,&quot;calculateServer&quot;:false,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Email Template&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;defaultValue&quot;:&quot;acknowledgementThirdParties&quot;,&quot;data&quot;:{&quot;values&quot;:[{&quot;value&quot;:&quot;acknowledgementThirdParties&quot;,&quot;label&quot;:&quot;Acknowledgement- Third Parties&quot;},{&quot;label&quot;:&quot;Acknowledgement- Brokers&quot;,&quot;value&quot;:&quot;acknowledgementBrokers&quot;},{&quot;label&quot;:&quot;Documents' ETA to clients&quot;,&quot;value&quot;:&quot;documentsEtaToClients&quot;},{&quot;label&quot;:&quot;Systems down- Unable to meet ETA the time committed to the customer&quot;,&quot;value&quot;:&quot;systemsDownUnableToMeetEtaTheTimeCommittedToTheCustomer&quot;},{&quot;label&quot;:&quot;Systems down- Reverting later than the time committed to the customer&quot;,&quot;value&quot;:&quot;systemsDownRevertingLaterThanTheTimeCommittedToTheCustomer&quot;},{&quot;label&quot;:&quot;Missed by another team- ETA missed due to another team/process&quot;,&quot;value&quot;:&quot;missedByAnotherTeamEtaMissedDueToAnotherTeamProcess&quot;},{&quot;label&quot;:&quot;Missed by another team- Reverting later than the time committed to a customer&quot;,&quot;value&quot;:&quot;missedByAnotherTeamRevertingLaterThanTheTimeCommittedToACustomer&quot;},{&quot;label&quot;:&quot;Missed by another team - Reverting to the client to extend the ETA the second time due to delays&quot;,&quot;value&quot;:&quot;missedByAnotherTeamRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;},{&quot;label&quot;:&quot;Missed by Loan Support - ETA would not be able to meet since there are delays by another Team / Process&quot;,&quot;value&quot;:&quot;missedByLoanSupportEtaWouldNotBeAbleToMeetSinceThereAreDelaysByAnotherTeamProcess&quot;},{&quot;label&quot;:&quot;Missed by Loan Support- reverting later than the time committed to the customer&quot;,&quot;value&quot;:&quot;missedByLoanSupportRevertingLaterThanTheTimeCommittedToTheCustomer&quot;},{&quot;label&quot;:&quot;Missed by Loan Support- Reverting to the client to extend the ETA the second time due to delays&quot;,&quot;value&quot;:&quot;missedByLoanSupportRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;}]},&quot;key&quot;:&quot;emailTemplate&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;uniqueOptions&quot;:false},{&quot;label&quot;:&quot;Template 1A&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;acknowledgementThirdParties&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;acknowledgementThirdParties&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 1B&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;acknowledgementBrokers&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;acknowledgementBrokers&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 2&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;documentsEtaToClients&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;documentsEtaToClients&quot;},&quot;logic&quot;:[{&quot;name&quot;:&quot;documentsEtaToClients&quot;,&quot;trigger&quot;:{&quot;type&quot;:&quot;javascript&quot;,&quot;javascript&quot;:&quot;result=(data.checkboxeta===true);&quot;},&quot;actions&quot;:[{&quot;name&quot;:&quot;documentsEtaToClients&quot;,&quot;type&quot;:&quot;value&quot;,&quot;value&quot;:&quot;return data.strT2.replace(\&quot;{1} {2}\&quot;, ( Number(data.new_days)*24+Number(data.new_hours) ).toString() + \&quot; hours,\&quot;);&quot;}]}],&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 3A&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;systemsDownUnableToMeetEtaTheTimeCommittedToTheCustomer&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;systemsDownUnableToMeetEtaTheTimeCommittedToTheCustomer&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 3B&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;systemsDownRevertingLaterThanTheTimeCommittedToTheCustomer&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;systemsDownRevertingLaterThanTheTimeCommittedToTheCustomer&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 4A&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByAnotherTeamEtaMissedDueToAnotherTeamProcess&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByAnotherTeamEtaMissedDueToAnotherTeamProcess&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 4B&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByAnotherTeamRevertingLaterThanTheTimeCommittedToACustomer&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByAnotherTeamRevertingLaterThanTheTimeCommittedToACustomer&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 4C&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByAnotherTeamRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByAnotherTeamRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 5A&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByLoanSupportEtaWouldNotBeAbleToMeetSinceThereAreDelaysByAnotherTeamProcess&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByLoanSupportEtaWouldNotBeAbleToMeetSinceThereAreDelaysByAnotherTeamProcess&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 5B&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByLoanSupportRevertingLaterThanTheTimeCommittedToTheCustomer&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByLoanSupportRevertingLaterThanTheTimeCommittedToTheCustomer&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false},{&quot;label&quot;:&quot;Template 5C&quot;,&quot;hideLabel&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;missedByLoanSupportRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;emailTemplate&quot;,&quot;eq&quot;:&quot;missedByLoanSupportRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays&quot;},&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false,&quot;spellcheck&quot;:true,&quot;fixedSize&quot;:true,&quot;clearOnHide&quot;:false}]}]}],&quot;key&quot;:&quot;tabs1&quot;,&quot;type&quot;:&quot;tabs&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Tabs&quot;,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;strT2&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;type&quot;:&quot;textfield&quot;,&quot;key&quot;:&quot;strT2&quot;}]" sap:VirtualizedContainerService.HintSize="333.6,372.8" sap2010:WorkflowViewState.IdRef="CreateFormTask_5" TaskCatalog="[catalog]" TaskOutput="[approvalTask]" TaskPriority="[TaskPriority.Medium]" TaskTitle="[&quot;Review: &quot;+EmailSubject]">
                                             <upaf:CreateFormTask.FormData>
-                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="actions">[actions_dt2]</InArgument>
-                                              <InOutArgument x:TypeArguments="x:String" x:Key="strfrom">[EmailFrom]</InOutArgument>
-                                              <InOutArgument x:TypeArguments="x:String" x:Key="strto">[EmailTo]</InOutArgument>
-                                              <InOutArgument x:TypeArguments="x:String" x:Key="strsubject">[EmailSubject]</InOutArgument>
-                                              <InOutArgument x:TypeArguments="x:String" x:Key="strcontent">[EmailContent]</InOutArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="actions">
+                                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="actions_dt2" />
+                                              </InArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="strfrom">
+                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmailFrom" />
+                                              </InOutArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="strto">
+                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmailTo" />
+                                              </InOutArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="strsubject">
+                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmailSubject" />
+                                              </InOutArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="strcontent">
+                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="EmailContent" />
+                                              </InOutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="loannumber_new">
                                                 <Literal x:TypeArguments="x:String" Value="" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="loannumber">[LoanNumber]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="days">[no_days]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="hours">[no_hours]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="loannumber">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="days">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="no_days" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="hours">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="no_hours" />
+                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="new_days">
                                                 <Literal x:TypeArguments="x:String" Value="" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="cc">[EmailCC]</InArgument>
-                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="datagridcat">[categories_dt2]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="acknowledgementThirdParties">[t1a]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="acknowledgementBrokers">[t1b]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="documentsEtaToClients">[t2]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="systemsDownUnableToMeetEtaTheTimeCommittedToTheCustomer">[t3a]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="systemsDownRevertingLaterThanTheTimeCommittedToTheCustomer">[t3b]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamEtaMissedDueToAnotherTeamProcess">[t4a]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamRevertingLaterThanTheTimeCommittedToACustomer">[t4b]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays">[t4c]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportEtaWouldNotBeAbleToMeetSinceThereAreDelaysByAnotherTeamProcess">[t5a]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportRevertingLaterThanTheTimeCommittedToTheCustomer">[t5b]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays">[t5c]</InArgument>
-                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="passwd">[dtAtt]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="cc">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailCC" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="datagridcat">
+                                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="categories_dt2" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="acknowledgementThirdParties">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t1a" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="acknowledgementBrokers">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t1b" />
+                                              </InArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="documentsEtaToClients">
+                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="t2" />
+                                              </InOutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="systemsDownUnableToMeetEtaTheTimeCommittedToTheCustomer">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t3a" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="systemsDownRevertingLaterThanTheTimeCommittedToTheCustomer">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t3b" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamEtaMissedDueToAnotherTeamProcess">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t4a" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamRevertingLaterThanTheTimeCommittedToACustomer">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t4b" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByAnotherTeamRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t4c" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportEtaWouldNotBeAbleToMeetSinceThereAreDelaysByAnotherTeamProcess">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t5a" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportRevertingLaterThanTheTimeCommittedToTheCustomer">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t5b" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="missedByLoanSupportRevertingToTheClientToExtendTheEtaTheSecondTimeDueToDelays">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t5c" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="passwd">
+                                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtAtt" />
+                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="new_hours">
                                                 <Literal x:TypeArguments="x:String" Value="" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strT2">[t2]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strT2">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="t2" />
+                                              </InArgument>
                                             </upaf:CreateFormTask.FormData>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2489,11 +2535,11 @@
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">700,886</av:Point>
-                                                    <av:Size x:Key="ShapeSize">200,51.2</av:Size>
+                                                    <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                                                     <av:PointCollection x:Key="ConnectorLocation">800,938 800,1026</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_41">
+                                                <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_41">
                                                   <ui:CommentOut.Body>
                                                     <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_167">
                                                       <Sequence DisplayName="Third Party Download" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_91">
@@ -3733,10 +3779,10 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">410,894</av:Point>
-            <av:Size x:Key="ShapeSize">200,51.2</av:Size>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_32">
+        <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_32">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_130">
               <TryCatch DisplayName="Process Wait4TaskCompletion" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
