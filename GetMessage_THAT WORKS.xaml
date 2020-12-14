@@ -24,7 +24,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>952,2126.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>928,2107</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -96,15 +96,15 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="878.666666666667,2062" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="879,2042" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="836.666666666667,1970" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="837,1950" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="798,1732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="798,1722" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="msgJSON" />
             <Variable x:TypeArguments="x:String" Name="str_Result" />
@@ -114,7 +114,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="756,97.3333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="756,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -128,7 +128,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="756,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Endpoint: &quot;+ KognivoURL + MsgID]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="756,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Endpoint: &quot;+ KognivoURL + MsgID]" />
           <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="Get Message by Id" EndPoint="[KognivoURL + MsgID]" sap:VirtualizedContainerService.HintSize="756,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[str_Result]" StatusCode="[argIntStatusCode]" TimeoutMS="6000">
             <ui:HttpClient.Attachments>
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -146,17 +146,17 @@
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.UrlSegments>
           </ui:HttpClient>
-          <If Condition="[argIntStatusCode = 200]" DisplayName="If Transaction Was Successful" sap:VirtualizedContainerService.HintSize="756,1245.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[argIntStatusCode = 200]" DisplayName="If Transaction Was Successful" sap:VirtualizedContainerService.HintSize="756,1236" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,1091.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,1088" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[msgJSON]" JsonString="[str_Result]" />
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;In Message&quot;+Environment.NewLine+msgJSON.ToString]" />
-                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,557.333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[msgJSON]" JsonString="[str_Result]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;In Message&quot;+Environment.NewLine+msgJSON.ToString]" />
+                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,563" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -298,12 +298,12 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MultipleAssign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[MsgID + &quot;is successfully serialized.&quot;+&quot;  Status Code:&quot;+argIntStatusCode.ToString]" />
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Email To: &quot;+EmailTo+Environment.NewLine+&quot;Email From: &quot;+EmailFrom+Environment.NewLine+&quot;Email CC: &quot;+EmailCC+Environment.NewLine+&quot;Email BCC: &quot;+EmailBCC+Environment.NewLine+&quot;Email Subject: &quot;+EmailSubject+Environment.NewLine+&quot;Email Content: &quot;+EmailContent+Environment.NewLine+&quot;Loan Number: &quot;+LoanNumber+Environment.NewLine+&quot;Condition Code:  &quot;+ConditionCode+Environment.NewLine+&quot;Categories: &quot;+Categories+Environment.NewLine+&quot;Actions: &quot;+Actions+Environment.NewLine+&quot;Urgent: &quot;+Urgent+Environment.NewLine+&quot;Question: &quot;+Question+Environment.NewLine+&quot;Request: &quot;+Request+Environment.NewLine+&quot;TAT: &quot;+TAT+Environment.NewLine+&quot;Attachments: &quot;+Attachments+Environment.NewLine+&quot;Sentiment: &quot;+Sentiment]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[MsgID + &quot; is successfully serialized. Status Code: &quot;+argIntStatusCode.ToString]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Email To: &quot;+EmailTo+Environment.NewLine+&quot;Email From: &quot;+EmailFrom+Environment.NewLine+&quot;Email CC: &quot;+EmailCC+Environment.NewLine+&quot;Email BCC: &quot;+EmailBCC+Environment.NewLine+&quot;Email Subject: &quot;+EmailSubject+Environment.NewLine+&quot;Email Content: &quot;+EmailContent+Environment.NewLine+&quot;Loan Number: &quot;+LoanNumber+Environment.NewLine+&quot;Condition Code:  &quot;+ConditionCode+Environment.NewLine+&quot;Categories: &quot;+Categories+Environment.NewLine+&quot;Actions: &quot;+Actions+Environment.NewLine+&quot;Urgent: &quot;+Urgent+Environment.NewLine+&quot;Question: &quot;+Question+Environment.NewLine+&quot;Request: &quot;+Request+Environment.NewLine+&quot;TAT: &quot;+TAT+Environment.NewLine+&quot;Attachments: &quot;+Attachments+Environment.NewLine+&quot;Sentiment: &quot;+Sentiment]" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[MsgID + &quot;is not successfully serialized&quot;&quot;  Status Code:&quot;+argIntStatusCode.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[MsgID + &quot;is not successfully serialized&quot;&quot;  Status Code:&quot;+argIntStatusCode.ToString]" />
             </If.Else>
           </If>
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="756,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
