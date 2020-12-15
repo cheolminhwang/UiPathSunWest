@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="RecordTaskResults1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="RecordTaskResults1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TaskObject" Type="InArgument(upaf:FormTaskData)" />
     <x:Property Name="taskaction" Type="InArgument(x:String)" />
@@ -12,15 +12,16 @@
     <x:Property Name="first_action" Type="OutArgument(x:String)" />
     <x:Property Name="second_action" Type="OutArgument(x:String)" />
     <x:Property Name="third_action" Type="OutArgument(x:String)" />
-    <x:Property Name="email_id" Type="InOutArgument(x:String)" />
+    <x:Property Name="email_id" Type="OutArgument(x:String)" />
     <x:Property Name="Sentiment" Type="InArgument(x:String)" />
     <x:Property Name="Request" Type="InArgument(x:String)" />
     <x:Property Name="Question" Type="InArgument(x:String)" />
     <x:Property Name="Urgent" Type="InArgument(x:String)" />
     <x:Property Name="template_chosen" Type="OutArgument(x:String)" />
     <x:Property Name="template_text" Type="OutArgument(x:String)" />
+    <x:Property Name="str_ForwardEmail" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1069,4791</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1069,4987</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -92,10 +93,9 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,4726" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,4922" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="taskData" />
       <Variable x:TypeArguments="sd:DataTable" Name="materialsDt" />
@@ -119,7 +119,6 @@
       <Variable x:TypeArguments="scg:List(x:String)" Name="categories_array" />
       <Variable x:TypeArguments="s:String[]" Name="category_array2" />
       <Variable x:TypeArguments="x:String" Name="bool_ForwardEmail" />
-      <Variable x:TypeArguments="x:String" Name="str_ForwardEmail" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -673,7 +672,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Get Actual Actions" sap:VirtualizedContainerService.HintSize="1037,2716" sap2010:WorkflowViewState.IdRef="Sequence_46">
+    <Sequence DisplayName="Get Actual Actions" sap:VirtualizedContainerService.HintSize="1037,2873" sap2010:WorkflowViewState.IdRef="Sequence_46">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="task_categories" />
         <Variable x:TypeArguments="x:String" Name="task_actions" />
@@ -882,14 +881,14 @@
           </Sequence>
         </If.Else>
       </If>
-      <Sequence DisplayName="Data Cleaning- Act Code Only" sap:VirtualizedContainerService.HintSize="995,1202" sap2010:WorkflowViewState.IdRef="Sequence_52">
+      <Sequence DisplayName="Data Cleaning- Act Code Only" sap:VirtualizedContainerService.HintSize="995,1359" sap2010:WorkflowViewState.IdRef="Sequence_52">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[first_action=&quot;&quot;]" DisplayName="First Action" sap:VirtualizedContainerService.HintSize="918,291" sap2010:WorkflowViewState.IdRef="If_13">
+        <If Condition="[first_action=&quot;&quot;]" DisplayName="First Action" sap:VirtualizedContainerService.HintSize="918,448" sap2010:WorkflowViewState.IdRef="If_13">
           <If.Then>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
               <Assign.To>
@@ -903,16 +902,16 @@
             </Assign>
           </If.Then>
           <If.Else>
-            <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <Sequence sap:VirtualizedContainerService.HintSize="611,300" sap2010:WorkflowViewState.IdRef="Sequence_53">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[first_action.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_17">
+              <If Condition="[first_action.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -1074,29 +1073,81 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1037,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Adding queue item.&quot;]" />
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="1037,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="SunWestProcess">
-      <ui:AddQueueItem.ItemInformation>
-        <InArgument x:TypeArguments="x:String" x:Key="MessageId">[email_id]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="First Category">[first_category]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Second Category">[second_category]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Third Category">[third_category]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Fourth Category">[fourth_category]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="First Action">[first_action]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Second Action">[second_action]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Third Action">[third_action]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Loan Number">[actual_loan_number]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="TAT- Days">[actual_days]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="TAT- Hours">[actual_hours]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Sentiment">[Sentiment]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Request">[Request]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Question">[Question]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Urgent">[Urgent]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ThreadId" />
-        <InArgument x:TypeArguments="x:String" x:Key="Template_Desc">[template_chosen]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Template_Text">[template_text]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ForwardEmail">[str_ForwardEmail]</InArgument>
-      </ui:AddQueueItem.ItemInformation>
-    </ui:AddQueueItem>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1037,192" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_56">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="SunWestProcess">
+            <ui:AddQueueItem.ItemInformation>
+              <InArgument x:TypeArguments="x:String" x:Key="MessageId">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="email_id" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="First Category">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="first_category" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Second Category">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="second_category" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Third Category">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="third_category" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Fourth Category">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fourth_category" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="First Action">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="first_action" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Second Action">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="second_action" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Third Action">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="third_action" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Loan Number">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loan_number" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="TAT- Days">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_days" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="TAT- Hours">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_hours" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Sentiment">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Sentiment" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Request">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Request" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Question">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Question" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Urgent">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Urgent" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ThreadId" />
+              <InArgument x:TypeArguments="x:String" x:Key="Template_Desc">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="template_chosen" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Template_Text">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="template_text" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ForwardEmail">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ForwardEmail" />
+              </InArgument>
+            </ui:AddQueueItem.ItemInformation>
+          </ui:AddQueueItem>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

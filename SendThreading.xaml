@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>830.666666666667,2424.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>801,2326</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadAttachments_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -78,9 +78,14 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Thread Reply" sap:VirtualizedContainerService.HintSize="735.333333333333,2320" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Thread Reply" sap:VirtualizedContainerService.HintSize="735,2261" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="listSavedFiles" />
       <Variable x:TypeArguments="x:String" Name="strAttachments" />
@@ -93,7 +98,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uga:GoogleAuthenticationScope CertificatePassword="{x:Null}" CertificatePath="{x:Null}" Timeout="{x:Null}" ClientID="[tmpid]" ClientSecret="[tmpsec]" DisplayName="Gmail Scope" EmailAddress="me" sap:VirtualizedContainerService.HintSize="693.333333333333,2228" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
+    <uga:GoogleAuthenticationScope CertificatePassword="{x:Null}" CertificatePath="{x:Null}" Timeout="{x:Null}" ClientID="[tmpid]" ClientSecret="[tmpsec]" DisplayName="Gmail Scope" EmailAddress="me" sap:VirtualizedContainerService.HintSize="693,2169" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
       <uga:GoogleAuthenticationScope.Body>
         <ActivityAction x:TypeArguments="uga:GoogleAuthenticationProperty, x:String">
           <ActivityAction.Argument1>
@@ -102,7 +107,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:String" Name="EmailAddress" />
           </ActivityAction.Argument2>
-          <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- MessageId&#xA;- MessageBody&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;&#xA;Output:&#xA;- out_ResultId" DisplayName="Do" sap:VirtualizedContainerService.HintSize="659.333333333333,2142" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- MessageId&#xA;- MessageBody&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;&#xA;Output:&#xA;- out_ResultId" DisplayName="Do" sap:VirtualizedContainerService.HintSize="659,2214" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="gagvd:Message" Name="Result" />
               <Variable x:TypeArguments="x:String" Name="strMsgBody" />
@@ -129,15 +134,16 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Sending Email.&quot;]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;MSGid&quot;+strMessageId+&quot;: strSubject:&quot; +strSubject +&quot;(thread:&quot; + Result.ThreadId +&quot;) from:&quot; + strFrom + &quot;&gt;to&gt;&quot; +strTo]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;MSGid&quot;+strMessageId+&quot;: strSubject:&quot; +strSubject +&quot;(thread:&quot; + Result.ThreadId +&quot;) from:&quot; + strFrom + &quot;&gt;to&gt;&quot; +strTo]" />
                 </Sequence>
               </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
@@ -147,15 +153,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="617,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,190" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,185" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uga:GetMailsActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="For this process, getting mail with Query in order to get message id..." DisplayName="Get Mails" sap:VirtualizedContainerService.HintSize="200,98" sap2010:WorkflowViewState.IdRef="GetMailsActivity_1" Max="1" Query="from:cheolmin.hwang@speridian.com" Result="[listMsg]">
+                  <uga:GetMailsActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="For this process, getting mail with Query in order to get message id..." DisplayName="Get Mails" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="GetMailsActivity_1" Max="1" Query="from:cheolmin.hwang@speridian.com" Result="[listMsg]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +179,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="617.333333333333,1184" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="617,1151" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <Sequence.Variables>
                 <Variable x:TypeArguments="gagvd:MessagePartHeader" Name="test" />
               </Sequence.Variables>
@@ -182,15 +188,15 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="575.333333333333,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="575,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,154" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[MessageId]</OutArgument>
                       </Assign.To>
@@ -207,8 +213,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <uga:GetMessageByIdActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" Body="[strMsgBody]" DisplayName="Get Message By ID" sap:VirtualizedContainerService.HintSize="575.333333333333,72" sap2010:WorkflowViewState.IdRef="GetMessageByIdActivity_1" MessageId="[MessageId]" Result="[Result]" />
-              <Assign sap:VirtualizedContainerService.HintSize="575.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <uga:GetMessageByIdActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" Body="[strMsgBody]" DisplayName="Get Message By ID" sap:VirtualizedContainerService.HintSize="575,70" sap2010:WorkflowViewState.IdRef="GetMessageByIdActivity_1" MessageId="[MessageId]" Result="[Result]" />
+              <Assign sap:VirtualizedContainerService.HintSize="575,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ThreadId]</OutArgument>
                 </Assign.To>
@@ -216,20 +222,20 @@
                   <InArgument x:TypeArguments="x:String">[Result.ThreadId]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEach x:TypeArguments="gagvd:MessagePartHeader" CurrentIndex="{x:Null}" DisplayName="For Each headers" sap:VirtualizedContainerService.HintSize="575.333333333333,650.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Result.Payload.Headers]">
+              <ui:ForEach x:TypeArguments="gagvd:MessagePartHeader" CurrentIndex="{x:Null}" DisplayName="For Each headers" sap:VirtualizedContainerService.HintSize="575,627" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Result.Payload.Headers]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="gagvd:MessagePartHeader">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="gagvd:MessagePartHeader" Name="item" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,512" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,493" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.Name]" sap:VirtualizedContainerService.HintSize="496.666666666667,285.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-                        <Assign x:Key="Subject" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.Name]" sap:VirtualizedContainerService.HintSize="497,270" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <Assign x:Key="Subject" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strSubject]</OutArgument>
                           </Assign.To>
@@ -237,21 +243,21 @@
                             <InArgument x:TypeArguments="x:String">[item.Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Sequence x:Key="From" sap:VirtualizedContainerService.HintSize="655.333333333333,459.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence x:Key="From" sap:VirtualizedContainerService.HintSize="654,453" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[item.Value.Contains(&quot;&lt;&quot;c)]" sap:VirtualizedContainerService.HintSize="612,410" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If Condition="[item.Value.Contains(&quot;&lt;&quot;c)]" sap:VirtualizedContainerService.HintSize="611,400" sap2010:WorkflowViewState.IdRef="If_1">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[strFrom]</OutArgument>
                                   </Assign.To>
@@ -259,7 +265,7 @@
                                     <InArgument x:TypeArguments="x:String">[Split(item.Value,"&lt;")(1)]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[strFrom]</OutArgument>
                                   </Assign.To>
@@ -270,7 +276,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[strFrom]</OutArgument>
                                 </Assign.To>
@@ -281,7 +287,7 @@
                             </If.Else>
                           </If>
                         </Sequence>
-                        <Assign x:Key="To" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign x:Key="To" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strTo]</OutArgument>
                           </Assign.To>
@@ -289,7 +295,7 @@
                             <InArgument x:TypeArguments="x:String">[item.Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign x:Key="References" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                        <Assign x:Key="References" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strReferences]</OutArgument>
                           </Assign.To>
@@ -297,7 +303,7 @@
                             <InArgument x:TypeArguments="x:String">[item.Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign x:Key="In-Reply-To" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign x:Key="In-Reply-To" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strInReplyTo]</OutArgument>
                           </Assign.To>
@@ -305,7 +311,7 @@
                             <InArgument x:TypeArguments="x:String">[item.Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign x:Key="Message-Id" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign x:Key="Message-Id" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strMessageId]</OutArgument>
                           </Assign.To>
@@ -313,7 +319,7 @@
                             <InArgument x:TypeArguments="x:String">[item.Value]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign x:Key="Message-ID" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign x:Key="Message-ID" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[strMessageId]</OutArgument>
                           </Assign.To>
@@ -322,7 +328,7 @@
                           </Assign.Value>
                         </Assign>
                       </Switch>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;NAME:&quot;+item.Name +&quot;(VALUE:&quot; + item.Value +&quot;)&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;NAME:&quot;+item.Name +&quot;(VALUE:&quot; + item.Value +&quot;)&quot;]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
@@ -333,10 +339,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;MessageId&lt;&quot;+MessageId+ &quot;&gt; strSubject:&quot;+strSubject +&quot;(strTo:&quot; +strTo +&quot;) ThreadID:&quot; + ThreadId]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;MessageId&lt;&quot;+MessageId+ &quot;&gt; strSubject:&quot;+strSubject +&quot;(strTo:&quot; +strTo +&quot;) ThreadID:&quot; + ThreadId]" />
             </Sequence>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;CREDENTIAL:&quot;+Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
-            <Assign sap:VirtualizedContainerService.HintSize="617.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;CREDENTIAL:&quot;+Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
+            <Assign sap:VirtualizedContainerService.HintSize="617,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strMsgBody]</OutArgument>
               </Assign.To>
@@ -344,8 +350,8 @@
                 <InArgument x:TypeArguments="x:String">["Acknowledged body" + Environment.NewLine + "---------------------" + MessageBody + Environment.NewLine + "---------------------" + Environment.NewLine + strMsgBody]</InArgument>
               </Assign.Value>
             </Assign>
-            <g:ReplyThread DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="617.333333333333,22" sap2010:WorkflowViewState.IdRef="ReplyThread_1" ResultId="[strResultId]" StrBody="[MessageBody]" StrClientId="[in_ClientId]" StrClientSecret="[in_ClientSecret]" StrFrom="[strTo]" StrInReplyTo="[strFrom]" StrJSON="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[strFrom]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;ResultID: &lt;&quot;+strResultId + &quot;&gt;&quot;]" />
+            <g:ReplyThread DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="617,22" sap2010:WorkflowViewState.IdRef="ReplyThread_1" ResultId="[strResultId]" StrBody="[MessageBody]" StrClientId="[in_ClientId]" StrClientSecret="[in_ClientSecret]" StrFrom="[strTo]" StrInReplyTo="[strFrom]" StrJSON="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[strFrom]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;ResultID: &lt;&quot;+strResultId + &quot;&gt;&quot;]" />
             <Assign sap:VirtualizedContainerService.HintSize="617.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strMsgBody]</OutArgument>

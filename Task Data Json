@@ -53,12 +53,11 @@
   ],
   "dgNewAct": [
     {
-      "actionadd": "e01-SendStandardAcknowledgmentNoEta"
+      "actionadd": "a01DownloadAndUploadAttachments"
     },
     {
-      "actionadd": "a01DownloadAndUploadAttachments"
+      "actionadd": "e01-SendStandardAcknowledgmentNoEta"
     }
   ],
-  "forwardMail": true,
-  "enterTheEmailAddress": "a@gmail.com"
+  "forwardMail": false
 }
