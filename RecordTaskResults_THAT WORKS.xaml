@@ -20,7 +20,7 @@
     <x:Property Name="template_chosen" Type="OutArgument(x:String)" />
     <x:Property Name="template_text" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>927,1984</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1069,4791</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="611,1919" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,4726" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="taskData" />
       <Variable x:TypeArguments="sd:DataTable" Name="materialsDt" />
@@ -126,7 +126,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1037,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_19">
           <sap:WorkflowViewStateService.ViewState>
@@ -151,7 +151,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign DisplayName="Cast Task Data to JObject" sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Cast Task Data to JObject" sap:VirtualizedContainerService.HintSize="1037,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="njl:JObject">[taskData]</OutArgument>
       </Assign.To>
@@ -159,8 +159,8 @@
         <InArgument x:TypeArguments="njl:JObject">[CType(in_TaskObject.Data, JObject)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WriteTextFile DisplayName="Write Text File" FileName="Task Data Json" sap:VirtualizedContainerService.HintSize="569,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[taskData.ToString]" />
-    <ui:MultipleAssign DisplayName="One Liners" sap:VirtualizedContainerService.HintSize="569,346" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:WriteTextFile DisplayName="Write Text File" FileName="Task Data Json" sap:VirtualizedContainerService.HintSize="1037,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[taskData.ToString]" />
+    <ui:MultipleAssign DisplayName="One Liners" sap:VirtualizedContainerService.HintSize="1037,346" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -238,7 +238,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1037,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_49">
           <sap:WorkflowViewStateService.ViewState>
@@ -263,7 +263,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <If Condition="[new_task_days=&quot;&quot;]" DisplayName="Getting the actual TAT (Days)" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[new_task_days=&quot;&quot;]" DisplayName="Getting the actual TAT (Days)" sap:VirtualizedContainerService.HintSize="1037,51" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -291,7 +291,7 @@
         </Assign>
       </If.Else>
     </If>
-    <If Condition="[new_task_hours=&quot;&quot;]" DisplayName="Getting the actual TAT (Hours)" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[new_task_hours=&quot;&quot;]" DisplayName="Getting the actual TAT (Hours)" sap:VirtualizedContainerService.HintSize="1037,51" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -319,7 +319,7 @@
         </Assign>
       </If.Else>
     </If>
-    <If Condition="[new_task_loannumber=&quot;&quot;]" DisplayName="Getting the actual Loan Number" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[new_task_loannumber=&quot;&quot;]" DisplayName="Getting the actual Loan Number" sap:VirtualizedContainerService.HintSize="1037,208" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -347,8 +347,8 @@
         </Assign>
       </If.Else>
     </If>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="569,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Number of Days: &quot;+actual_days+&quot;  Number of Hours: &quot;+actual_hours+ &quot;  Loan Number: &quot;+actual_loan_number]" />
-    <Sequence DisplayName="Getting actual Categories" sap:VirtualizedContainerService.HintSize="569,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1037,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Number of Days: &quot;+actual_days+&quot;  Number of Hours: &quot;+actual_hours+ &quot;  Loan Number: &quot;+actual_loan_number]" />
+    <Sequence DisplayName="Getting actual Categories" sap:VirtualizedContainerService.HintSize="1037,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="task_categories" />
         <Variable x:TypeArguments="x:String" Name="task_actions" />
@@ -673,7 +673,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Get Actual Actions" sap:VirtualizedContainerService.HintSize="569,66" sap2010:WorkflowViewState.IdRef="Sequence_46">
+    <Sequence DisplayName="Get Actual Actions" sap:VirtualizedContainerService.HintSize="1037,2716" sap2010:WorkflowViewState.IdRef="Sequence_46">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="task_categories" />
         <Variable x:TypeArguments="x:String" Name="task_actions" />
@@ -683,7 +683,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -882,14 +882,14 @@
           </Sequence>
         </If.Else>
       </If>
-      <Sequence DisplayName="Data Cleaning- Act Code Only" sap:VirtualizedContainerService.HintSize="995,66" sap2010:WorkflowViewState.IdRef="Sequence_52">
+      <Sequence DisplayName="Data Cleaning- Act Code Only" sap:VirtualizedContainerService.HintSize="995,1202" sap2010:WorkflowViewState.IdRef="Sequence_52">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[first_action=&quot;&quot;]" DisplayName="First Action" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_13">
+        <If Condition="[first_action=&quot;&quot;]" DisplayName="First Action" sap:VirtualizedContainerService.HintSize="918,291" sap2010:WorkflowViewState.IdRef="If_13">
           <If.Then>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
               <Assign.To>
@@ -903,17 +903,44 @@
             </Assign>
           </If.Then>
           <If.Else>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_62">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[first_action]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[first_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_53">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[first_action.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_17">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[first_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[first_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[first_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[first_action.Substring(0,3).ToUpper]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
+            </Sequence>
           </If.Else>
         </If>
-        <If Condition="[second_action=&quot;&quot;]" DisplayName="Second Action" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_14">
+        <If Condition="[second_action=&quot;&quot;]" DisplayName="Second Action" sap:VirtualizedContainerService.HintSize="918,291" sap2010:WorkflowViewState.IdRef="If_14">
           <If.Then>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_63">
               <Assign.To>
@@ -927,17 +954,44 @@
             </Assign>
           </If.Then>
           <If.Else>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_64">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[second_action]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[second_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_54">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[second_action.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_18">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[second_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[second_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[second_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[second_action.Substring(0,3).ToUpper]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
+            </Sequence>
           </If.Else>
         </If>
-        <If Condition="[third_action=&quot;&quot;]" DisplayName="Third Action" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_15">
+        <If Condition="[third_action=&quot;&quot;]" DisplayName="Third Action" sap:VirtualizedContainerService.HintSize="918,448" sap2010:WorkflowViewState.IdRef="If_15">
           <If.Then>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_65">
               <Assign.To>
@@ -951,22 +1005,49 @@
             </Assign>
           </If.Then>
           <If.Else>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_66">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[third_action]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[third_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <Sequence sap:VirtualizedContainerService.HintSize="611,300" sap2010:WorkflowViewState.IdRef="Sequence_55">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[third_action.Contains(&quot;-&quot;)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[third_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[third_action.Split("-"c )(0).ToString.Trim.toUpper()]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_71">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[third_action]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[third_action.Substring(0,3).ToUpper]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
+            </Sequence>
           </If.Else>
         </If>
       </Sequence>
     </Sequence>
-    <If Condition="[bool_ForwardEmail.ToLower=&quot;true&quot;]" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="If_16">
+    <If Condition="[bool_ForwardEmail.ToLower=&quot;true&quot;]" sap:VirtualizedContainerService.HintSize="1037,208" sap2010:WorkflowViewState.IdRef="If_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -993,8 +1074,8 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="569,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Adding queue item.&quot;]" />
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="569,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="SunWestProcess">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1037,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Adding queue item.&quot;]" />
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="1037,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="SunWestProcess">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="MessageId">[email_id]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="First Category">[first_category]</InArgument>

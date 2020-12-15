@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>927,532</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>801,532</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadAttachments_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -88,6 +88,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Thread Reply" sap:VirtualizedContainerService.HintSize="376,467" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -134,7 +135,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:String" Name="EmailAddress" />
           </ActivityAction.Argument2>
-          <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- MessageId&#xA;- MessageBody&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;&#xA;Output:&#xA;- out_ResultId" DisplayName="Do" sap:VirtualizedContainerService.HintSize="659,1667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- MessageId&#xA;- MessageBody&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;&#xA;Output:&#xA;- out_ResultId" DisplayName="Do" sap:VirtualizedContainerService.HintSize="659,1798" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="gagvd:Message" Name="Result" />
               <Variable x:TypeArguments="x:String" Name="strMsgBody" />
@@ -161,7 +162,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="617,776" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="617,907" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <Sequence.Variables>
                 <Variable x:TypeArguments="gagvd:MessagePartHeader" Name="test" />
               </Sequence.Variables>
@@ -170,6 +171,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Forwarding mail to: &quot; + in_str_ForwardMail]" />
               <uga:GetMessageByIdActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" Body="[strMsgBody]" DisplayName="Get Message By ID" sap:VirtualizedContainerService.HintSize="575,70" sap2010:WorkflowViewState.IdRef="GetMessageByIdActivity_1" MessageId="[MessageId]" Result="[Result]" />
               <Assign sap:VirtualizedContainerService.HintSize="575,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                 <Assign.To>
