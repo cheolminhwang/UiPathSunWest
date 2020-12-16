@@ -26,7 +26,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>801,1030</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>927,753</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -112,9 +112,10 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="480,965" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="476,688" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ThreadId" />
       <Variable x:TypeArguments="x:String" Name="strResultId" />
@@ -127,8 +128,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="438,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,691" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,414" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <uga:GoogleAuthenticationScope CertificatePassword="{x:Null}" CertificatePath="{x:Null}" Timeout="{x:Null}" ClientID="[in_ClientIdout]" ClientSecret="[in_ClientSecretout]" DisplayName="Gmail Scope" EmailAddress="me" sap:VirtualizedContainerService.HintSize="334,464" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
           <uga:GoogleAuthenticationScope.Body>
@@ -139,7 +140,7 @@
               <ActivityAction.Argument2>
                 <DelegateInArgument x:TypeArguments="x:String" Name="EmailAddress" />
               </ActivityAction.Argument2>
-              <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- in_TransactionItem&#xA;- in_Config&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;- in_NewLabel&#xA;- in_RemLabel&#xA;- in_CondCode&#xA;- in_LoanNum&#xA;- in_DocName&#xA;- in_cQuestion&#xA;- in_cUrgent&#xA;- in_cRequest&#xA;- in_ESentiment&#xA;- in_Cat1, in_Cat2, in_Cat3, in_Cat4&#xA;- in_Act1, in_Act3&#xA;&#xA;Output:&#xA;- N/A" DisplayName="Do" sap:VirtualizedContainerService.HintSize="1355,8723" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- in_TransactionItem&#xA;- in_Config&#xA;- in_ClientId&#xA;- in_ClientSecret&#xA;- in_NewLabel&#xA;- in_RemLabel&#xA;- in_CondCode&#xA;- in_LoanNum&#xA;- in_DocName&#xA;- in_cQuestion&#xA;- in_cUrgent&#xA;- in_cRequest&#xA;- in_ESentiment&#xA;- in_Cat1, in_Cat2, in_Cat3, in_Cat4&#xA;- in_Act1, in_Act3&#xA;&#xA;Output:&#xA;- N/A" DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,378" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="gagvd:Message" Name="Result" />
                   <Variable x:TypeArguments="x:String" Name="strMsgBody" />
@@ -3402,10 +3403,10 @@
         </uga:GoogleAuthenticationScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,252" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -3413,14 +3414,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_112">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_112">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Error" Message="[exception.Message]" />
-              <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Error" Message="[&quot;Exception in Document Labeling:&quot;+exception.Message]" />
             </Sequence>
           </ActivityAction>
         </Catch>
