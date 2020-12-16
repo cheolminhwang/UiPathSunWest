@@ -7,10 +7,10 @@
   "passwd": [
     {
       "attachfn": "CPL 50051203 11-23.pdf",
-      "password": "",
+      "password": "12345",
       "checkboxpw": "",
       "urlattach": "https://0wayqt4bgj.execute-api.us-east-1.amazonaws.com/dev/attachments/10411",
-      "protected": "No"
+      "protected": "Yes"
     }
   ],
   "checkboxloannum": false,
@@ -53,10 +53,7 @@
   ],
   "dgNewAct": [
     {
-      "actionadd": "a01DownloadAndUploadAttachments"
-    },
-    {
-      "actionadd": "e01-SendStandardAcknowledgmentNoEta"
+      "actionadd": "a02-DownloadAndUplaodAttachmentsPp"
     }
   ],
   "forwardMail": false
