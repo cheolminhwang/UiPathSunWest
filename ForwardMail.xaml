@@ -317,7 +317,7 @@
                 </ui:ForEach>
               </If.Then>
               <If.Else>
-                <g:ReplyThread DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ReplyThread_2" ResultId="[strResultId]" StrBody="[MessageBody]" StrClientId="[in_ClientId]" StrClientSecret="[in_ClientSecret]" StrFrom="[in_str_ForwardMail]" StrInReplyTo="[strInReplyTo]" StrJSON="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[strFrom]" />
+                <g:ReplyThread DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ReplyThread_2" ResultId="[strResultId]" StrBody="[MessageBody]" StrClientId="[in_ClientId]" StrClientSecret="[in_ClientSecret]" StrFrom="[strFrom]" StrInReplyTo="[strInReplyTo]" StrJSON="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[in_str_ForwardMail]" />
               </If.Else>
             </If>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;ResultID: &lt;&quot;+strResultId + &quot;&gt;&quot;]" />
