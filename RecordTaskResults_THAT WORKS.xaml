@@ -22,7 +22,7 @@
     <x:Property Name="str_ForwardEmail" Type="OutArgument(x:String)" />
     <x:Property Name="in_str_DownloadPath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1499,1355</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149,7787</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -96,18 +96,18 @@
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1509,1290" sap2010:WorkflowViewState.IdRef="Sequence_57">
+  <Sequence sap:VirtualizedContainerService.HintSize="1159,7722" sap2010:WorkflowViewState.IdRef="Sequence_57">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1467,1198" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1117,7630" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="intError" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,7504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,7403" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="materialsDt" />
             <Variable x:TypeArguments="x:String" Name="str" />
@@ -319,7 +319,7 @@
             </If.Else>
           </If>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1037,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Number of Days: &quot;+actual_days+&quot;  Number of Hours: &quot;+actual_hours+ &quot;  Loan Number: &quot;+actual_loan_number]" />
-          <Sequence DisplayName="Getting actual Categories" sap:VirtualizedContainerService.HintSize="1037,2619" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Getting actual Categories" sap:VirtualizedContainerService.HintSize="1037,2518" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="task_categories" />
               <Variable x:TypeArguments="x:String" Name="task_actions" />
@@ -330,7 +330,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[taskData(&quot;dgNewCat&quot;).toString.contains(&quot;categoryadd&quot;)]" DisplayName="Where it Comes From" sap:VirtualizedContainerService.HintSize="995,1443" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[taskData(&quot;dgNewCat&quot;).toString.contains(&quot;categoryadd&quot;)]" DisplayName="Where it Comes From" sap:VirtualizedContainerService.HintSize="995,1342" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,7 +338,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="496,1295" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                <Sequence sap:VirtualizedContainerService.HintSize="496,1194" sap2010:WorkflowViewState.IdRef="Sequence_38">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -352,19 +352,19 @@
                       <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454,641" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[taskData(&quot;dgNewCat&quot;)]">
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454,540" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[taskData(&quot;dgNewCat&quot;)]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="418,507" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                        <Sequence sap:VirtualizedContainerService.HintSize="418,406" sap2010:WorkflowViewState.IdRef="Sequence_32">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,415" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_31">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="categoryadd" />
                               <Variable x:TypeArguments="njl:JObject" Name="item_json" />
@@ -384,7 +384,6 @@
                                 <InArgument x:TypeArguments="x:String">[item_json_new("categoryadd").ToString]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[categoryadd]" />
                             <AddToCollection x:TypeArguments="x:String" Collection="[categories_array]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[categoryadd]" />
                           </Sequence>
                         </Sequence>
@@ -441,7 +440,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="454,1203" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                <Sequence sap:VirtualizedContainerService.HintSize="454,1102" sap2010:WorkflowViewState.IdRef="Sequence_35">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="njl:JObject" Name="categories" />
                   </Sequence.Variables>
@@ -458,13 +457,13 @@
                       <InArgument x:TypeArguments="scg:List(x:String)">[New List(of String)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,549" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[taskData(&quot;datagridcat&quot;)]">
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,448" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[taskData(&quot;datagridcat&quot;)]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,415" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_37">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="acat" />
                             <Variable x:TypeArguments="njl:JObject" Name="item_json" />
@@ -483,7 +482,6 @@
                               <InArgument x:TypeArguments="x:String">[item_json("acat").tostring]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[acat]" />
                           <AddToCollection x:TypeArguments="x:String" Collection="[categories_array]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[acat]" />
                         </Sequence>
                       </ActivityAction>
@@ -1055,10 +1053,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1433,1036" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1083,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
