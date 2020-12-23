@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetMessage" this:GetMessage.KognivoURL="https://0wayqt4bgj.execute-api.us-east-1.amazonaws.com/dev/messages/" this:GetMessage.KognivoKey="EmL7DepVBq9RtFSzu2OAN5zIPqCZpspO9TC2y9kV" this:GetMessage.Image_upload_ID="[new list(of string)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetMessage" this:GetMessage.KognivoURL="https://0wayqt4bgj.execute-api.us-east-1.amazonaws.com/dev/messages/" this:GetMessage.KognivoKey="EmL7DepVBq9RtFSzu2OAN5zIPqCZpspO9TC2y9kV" this:GetMessage.Categories="[new list(of string)]" this:GetMessage.Actions="[new list(of string)]" this:GetMessage.Image_upload_ID="[new list(of string)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argIntStatusCode" Type="OutArgument(x:Int32)" />
     <x:Property Name="KognivoURL" Type="InArgument(x:String)" />
@@ -27,7 +27,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1095,6959</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1095,6882</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -102,16 +102,16 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- Actions : String[]  e.g {&quot;A01&quot;,&quot;E02&quot;,&quot;L01a&quot;}&#xA;- Categories : String[]&#xA;- Image_upload_ID : String[]&#xA;- ConditionCode : String&#xA;- KognivoKey: String&#xA;- KognivoURL: String&#xA;- LoanNumber: String&#xA;- MsgID: String&#xA;- Question: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Request: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Sentiment: String    &#xA;- Urgent: String     e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;&#xA;Output:&#xA;- argIntStatusCode : Int" sap:VirtualizedContainerService.HintSize="1105,6894" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Input Argument:&#xA;- Actions : String[]  e.g {&quot;A01&quot;,&quot;E02&quot;,&quot;L01a&quot;}&#xA;- Categories : String[]&#xA;- Image_upload_ID : String[]&#xA;- ConditionCode : String&#xA;- KognivoKey: String&#xA;- KognivoURL: String&#xA;- LoanNumber: String&#xA;- MsgID: String&#xA;- Question: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Request: String    e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;- Sentiment: String    &#xA;- Urgent: String     e.g &quot;false&quot; // stick with string rather than boolean in order to check null argument&#xA;&#xA;Output:&#xA;- argIntStatusCode : Int" sap:VirtualizedContainerService.HintSize="1105,6817" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1063,6550" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1063,6473" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="1025,6323" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="1025,6246" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="msgJSON" />
             <Variable x:TypeArguments="x:String" Name="str_Result" />
@@ -138,12 +138,12 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <If Condition="[IsNothing(Actions)]" DisplayName="If Actions" sap:VirtualizedContainerService.HintSize="983,717" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[IsNothing(Actions) or Actions.Count=0]" DisplayName="If Actions" sap:VirtualizedContainerService.HintSize="983,640" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;No Action&quot;]" />
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="349,569" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence sap:VirtualizedContainerService.HintSize="349,492" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,22 +157,23 @@
                     <InArgument x:TypeArguments="x:String">[strBody + """actions"""+": ["""]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="307,277" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Actions]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="307,200" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Actions]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[item.Trim.Length&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_11">
+                        <If Condition="[item.Trim.Length&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -202,7 +203,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[IsNothing(Categories)]" DisplayName="If Categories" sap:VirtualizedContainerService.HintSize="983,874" sap2010:WorkflowViewState.IdRef="If_9">
+          <If Condition="[IsNothing(Categories) or Categories.Count=0]" DisplayName="If Categories" sap:VirtualizedContainerService.HintSize="983,874" sap2010:WorkflowViewState.IdRef="If_9">
             <If.Then>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[&quot;No Categories&quot;]" />
             </If.Then>

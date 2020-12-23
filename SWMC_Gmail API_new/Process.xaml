@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" this:Process.in_ClientId="727481966156-kf0jhl0fu6mthorh6csfdond6eev7mgm.apps.googleusercontent.com" this:Process.in_ClientSecret="MVYZU4SHmYKAZE3PNjYTsoYW" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:g="clr-namespace:GmailActivity;assembly=GmailActivity" xmlns:gagvd="clr-namespace:Google.Apis.Gmail.v1.Data;assembly=Google.Apis.Gmail.v1" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uga="clr-namespace:UiPathTeam.Gmail.Activities;assembly=UiPathTeam.Gmail.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" this:Process.in_ClientId="727481966156-kf0jhl0fu6mthorh6csfdond6eev7mgm.apps.googleusercontent.com" this:Process.in_ClientSecret="MVYZU4SHmYKAZE3PNjYTsoYW" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:gagvd="clr-namespace:Google.Apis.Gmail.v1.Data;assembly=Google.Apis.Gmail.v1" xmlns:maes="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uga="clr-namespace:UiPathTeam.Gmail.Activities;assembly=UiPathTeam.Gmail.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1231.2,5676.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1233,5560</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -88,10 +88,9 @@
       <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1241.6,5572" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1243,5495" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="MessageId" />
       <Variable x:TypeArguments="x:String" Name="ThreadId" />
@@ -103,8 +102,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1200,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <uga:GoogleAuthenticationScope CertificatePassword="{x:Null}" CertificatePath="{x:Null}" Timeout="{x:Null}" ClientID="[in_ClientId]" ClientSecret="[in_ClientSecret]" DisplayName="Gmail Scope" EmailAddress="me" sap:VirtualizedContainerService.HintSize="1200,5307.2" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1201,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <uga:GoogleAuthenticationScope CertificatePassword="{x:Null}" CertificatePath="{x:Null}" Timeout="{x:Null}" ClientID="[in_ClientId]" ClientSecret="[in_ClientSecret]" DisplayName="Gmail Scope" EmailAddress="me" sap:VirtualizedContainerService.HintSize="1201,5236" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
       <uga:GoogleAuthenticationScope.Body>
         <ActivityAction x:TypeArguments="uga:GoogleAuthenticationProperty, x:String">
           <ActivityAction.Argument1>
@@ -113,7 +112,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:String" Name="EmailAddress" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1166.4,5220.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1167,5150" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="gagvd:Message" Name="Result" />
               <Variable x:TypeArguments="x:String" Name="strMsgBody" />
@@ -139,9 +138,9 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[in_TransactionItem is Nothing]" sap:VirtualizedContainerService.HintSize="1124.8,1648.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_TransactionItem is Nothing]" sap:VirtualizedContainerService.HintSize="1125,1647" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="692,1499.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence sap:VirtualizedContainerService.HintSize="692,1499" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -799,19 +798,17 @@
               </If>
               <uga:ModifyMessageLabelActivity ContinueOnError="{x:Null}" Timeout="{x:Null}" DisplayName="Modify Message Labels" sap:VirtualizedContainerService.HintSize="1083.2,135.2" sap2010:WorkflowViewState.IdRef="ModifyMessageLabelActivity_1" LabelsToAdd="[listAddLabels]" LabelsToRemove="[listRemLabels]" MessageId="[MessageId]" />
             </Sequence>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1124.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1124.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;CREDENTIAL:&quot;+Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
-            <g:ReplyThread DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="1124.8,22.4" sap2010:WorkflowViewState.IdRef="ReplyThread_6" ResultId="[strResultId]" StrBody="[&quot;ACK&quot; + Environment.NewLine + &quot;---------------------&quot; + Environment.NewLine + strMsgBody]" StrClientId="[in_ClientId]" StrClientSecret="[in_ClientSecret]" StrFrom="[strTo]" StrInReplyTo="[strMessageId]" StrJSON="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[strFrom]" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1124.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1125,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1125,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;CREDENTIAL:&quot;+Path.GetFullPath(&quot;Data\credentials.json&quot;)]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1125,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="525.6,268.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,204" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <g:ReplyThread StrClientId="{x:Null}" StrClientSecret="{x:Null}" StrJSON="{x:Null}" DisplayName="Reply thread" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="ReplyThread_4" ResultId="[strResultId]" StrBody="[&quot;ACK&quot; + Environment.NewLine + &quot;---------------------&quot; + Environment.NewLine + strMsgBody]" StrFrom="[strTo]" StrInReplyTo="[strMessageId]" StrReferences="[strMessageId]" StrSubject="[strSubject]" StrThreadId="[ThreadId]" StrTo="[strFrom]" />
-                  <uga:SendEmailActivity Attachment="{x:Null}" ContinueOnError="{x:Null}" Timeout="{x:Null}" Body="[&quot;Test&quot; + Environment.NewLine + strMsgBody]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="200,36.8" sap2010:WorkflowViewState.IdRef="SendEmailActivity_1" Subject="[&quot;Re: &quot; + strSubject]" To="[{strFrom}]">
+                  <uga:SendEmailActivity Attachment="{x:Null}" ContinueOnError="{x:Null}" Timeout="{x:Null}" Body="[&quot;Test&quot; + Environment.NewLine + strMsgBody]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="200,36" sap2010:WorkflowViewState.IdRef="SendEmailActivity_1" Subject="[&quot;Re: &quot; + strSubject]" To="[{strFrom}]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -819,7 +816,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uga:SendEmailActivity>
-                  <uga:GetMailsActivity ContinueOnError="{x:Null}" Query="{x:Null}" Timeout="{x:Null}" DisplayName="Get Mails" sap:VirtualizedContainerService.HintSize="200,36.8" sap2010:WorkflowViewState.IdRef="GetMailsActivity_2" Max="2" Result="[gmresult]" />
+                  <uga:GetMailsActivity ContinueOnError="{x:Null}" Query="{x:Null}" Timeout="{x:Null}" DisplayName="Get Mails" sap:VirtualizedContainerService.HintSize="200,36" sap2010:WorkflowViewState.IdRef="GetMailsActivity_2" Max="2" Result="[gmresult]" />
                 </Sequence>
               </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
