@@ -21,8 +21,9 @@
     <x:Property Name="template_text" Type="OutArgument(x:String)" />
     <x:Property Name="str_ForwardEmail" Type="OutArgument(x:String)" />
     <x:Property Name="in_str_DownloadPath" Type="InArgument(x:String)" />
+    <x:Property Name="str_AdditionalMailContent" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1149,7787</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149,7979</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -94,20 +95,21 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1159,7722" sap2010:WorkflowViewState.IdRef="Sequence_57">
+  <Sequence sap:VirtualizedContainerService.HintSize="1159,7914" sap2010:WorkflowViewState.IdRef="Sequence_57">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1117,7630" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1117,7822" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="intError" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,7403" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="RecordTaskResults" sap:VirtualizedContainerService.HintSize="1079,7595" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="materialsDt" />
             <Variable x:TypeArguments="x:String" Name="str" />
@@ -1013,7 +1015,7 @@
               </If>
             </Sequence>
           </Sequence>
-          <If Condition="[bool_ForwardEmail.ToLower=&quot;true&quot;]" sap:VirtualizedContainerService.HintSize="1037,208" sap2010:WorkflowViewState.IdRef="If_16">
+          <If Condition="[bool_ForwardEmail.ToLower=&quot;true&quot;]" sap:VirtualizedContainerService.HintSize="1037,400" sap2010:WorkflowViewState.IdRef="If_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1021,26 +1023,58 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[str_ForwardEmail]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[taskData("enterTheEmailAddress").ToString]</InArgument>
-                </Assign.Value>
-              </Assign>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[str_ForwardEmail]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[taskData("enterTheEmailAddress").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_76">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[str_AdditionalMailContent]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[taskData("enterTheEmailAddress1").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
             </If.Then>
             <If.Else>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[str_ForwardEmail]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">
-                    <Literal x:TypeArguments="x:String" Value="" />
-                  </InArgument>
-                </Assign.Value>
-              </Assign>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[str_ForwardEmail]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[str_AdditionalMailContent]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
             </If.Else>
           </If>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RemovePasswordProtection workflow" sap:VirtualizedContainerService.HintSize="1037,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="RemovePasswordProtection.xaml">

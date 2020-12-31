@@ -11,7 +11,6 @@
     <x:Property Name="EmailSubject" Type="OutArgument(x:String)" />
     <x:Property Name="EmailContent" Type="OutArgument(x:String)" />
     <x:Property Name="LoanNumber" Type="OutArgument(x:String)" />
-    <x:Property Name="ConditionCode" Type="OutArgument(x:String)" />
     <x:Property Name="Categories" Type="OutArgument(x:String)" />
     <x:Property Name="Actions" Type="OutArgument(x:String)" />
     <x:Property Name="Urgent" Type="OutArgument(x:String)" />
@@ -20,11 +19,12 @@
     <x:Property Name="TAT" Type="OutArgument(x:String)" />
     <x:Property Name="Attachments" Type="OutArgument(x:String)" />
     <x:Property Name="Sentiment" Type="OutArgument(x:String)" />
+    <x:Property Name="ConditionCode" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>927,571</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>927,2406</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -97,15 +97,15 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,506" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="877,2341" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,414" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="835,2249" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="797,1850" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="GetMessage" sap:VirtualizedContainerService.HintSize="797,2022" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="msgJSON" />
             <Variable x:TypeArguments="x:String" Name="str_Result" />
@@ -148,9 +148,9 @@
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.UrlSegments>
           </ui:HttpClient>
-          <If Condition="[argIntStatusCode = 200]" DisplayName="If Transaction Was Successful" sap:VirtualizedContainerService.HintSize="755,1296" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[argIntStatusCode = 200]" DisplayName="If Transaction Was Successful" sap:VirtualizedContainerService.HintSize="755,1468" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,1148" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,1320" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,6 +158,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[msgJSON]" JsonString="[str_Result]" />
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Message from API Request in Json Format: &quot;+Environment.NewLine+msgJSON.ToString]" />
+                <ui:WriteTextFile DisplayName="Write Text File" FileName="GetMessage.json" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[msgJSON.ToString]" />
                 <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,563" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
@@ -217,14 +218,6 @@
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
                           <InArgument x:TypeArguments="x:String">[msgJSON("loanNumber").ToString]</InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:String">[ConditionCode]</OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">[msgJSON("conditionCode").ToString]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
@@ -291,6 +284,14 @@
                           <InArgument x:TypeArguments="x:String">[msgJSON("sentiment").ToString]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[ConditionCode]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[msgJSON("conditionCodes").ToString]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                   <sap:WorkflowViewStateService.ViewState>
@@ -301,7 +302,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MultipleAssign>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[MsgID + &quot; is successfully serialized. Status Code: &quot;+argIntStatusCode.ToString]" />
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Email To: &quot;+EmailTo+Environment.NewLine+&quot;Email From: &quot;+EmailFrom+Environment.NewLine+&quot;Email CC: &quot;+EmailCC+Environment.NewLine+&quot;Email BCC: &quot;+EmailBCC+Environment.NewLine+&quot;Email Subject: &quot;+EmailSubject+Environment.NewLine+&quot;Email Content: &quot;+EmailContent+Environment.NewLine+&quot;Loan Number: &quot;+LoanNumber+Environment.NewLine+&quot;Condition Code:  &quot;+ConditionCode+Environment.NewLine+&quot;Categories: &quot;+Categories+Environment.NewLine+&quot;Actions: &quot;+Actions+Environment.NewLine+&quot;Urgent: &quot;+Urgent+Environment.NewLine+&quot;Question: &quot;+Question+Environment.NewLine+&quot;Request: &quot;+Request+Environment.NewLine+&quot;TAT: &quot;+TAT+Environment.NewLine+&quot;Attachments: &quot;+Attachments+Environment.NewLine+&quot;Sentiment: &quot;+Sentiment]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Email To: &quot;+EmailTo+Environment.NewLine+&quot;Email From: &quot;+EmailFrom+Environment.NewLine+&quot;Email CC: &quot;+EmailCC+Environment.NewLine+&quot;Email BCC: &quot;+EmailBCC+Environment.NewLine+&quot;Email Subject: &quot;+EmailSubject+Environment.NewLine+&quot;Email Content: &quot;+EmailContent+Environment.NewLine+&quot;Loan Number: &quot;+LoanNumber+Environment.NewLine+Environment.NewLine+&quot;Categories: &quot;+Categories+Environment.NewLine+&quot;Actions: &quot;+Actions+Environment.NewLine+&quot;Urgent: &quot;+Urgent+Environment.NewLine+&quot;Question: &quot;+Question+Environment.NewLine+&quot;Request: &quot;+Request+Environment.NewLine+&quot;TAT: &quot;+TAT+Environment.NewLine+&quot;Attachments: &quot;+Attachments+Environment.NewLine+&quot;Sentiment: &quot;+Sentiment+&quot; ConditionCode: &quot;+ ConditionCode]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -311,10 +312,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,252" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="801,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
