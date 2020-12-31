@@ -1080,7 +1080,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">710,400 790,400 790,426.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Get Form Information " sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                <Sequence DisplayName="Get Form Information " sap:VirtualizedContainerService.HintSize="1527,5728" sap2010:WorkflowViewState.IdRef="Sequence_58">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="Categories_Dict" />
                     <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="Actions_Dict" />
@@ -1097,9 +1097,9 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1485,3678" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1485,5636" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1447,3451" sap2010:WorkflowViewState.IdRef="Sequence_195">
+                      <Sequence sap:VirtualizedContainerService.HintSize="1447,5409" sap2010:WorkflowViewState.IdRef="Sequence_195">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1250,7 +1250,7 @@
                             <OutArgument x:TypeArguments="x:String" x:Key="ConditionCode">[ConditionCode]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <If Condition="[intStatusCode = 200]" sap:VirtualizedContainerService.HintSize="1405,2248" sap2010:WorkflowViewState.IdRef="If_53">
+                        <If Condition="[intStatusCode = 200]" sap:VirtualizedContainerService.HintSize="1405,4206" sap2010:WorkflowViewState.IdRef="If_53">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1258,13 +1258,13 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="1260,2100" sap2010:WorkflowViewState.IdRef="Sequence_184">
+                            <Sequence sap:VirtualizedContainerService.HintSize="1260,4058" sap2010:WorkflowViewState.IdRef="Sequence_184">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Categories and Actions " sap:VirtualizedContainerService.HintSize="1218,1197" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                              <Sequence DisplayName="Categories and Actions " sap:VirtualizedContainerService.HintSize="1218,3155" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="test" />
                                 </Sequence.Variables>
@@ -1274,11 +1274,11 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="725,91" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Making categories and actions for form.&quot;]" />
-                                <If Condition="[Categories=&quot;&quot;]" DisplayName="Make Categories for Form" sap:VirtualizedContainerService.HintSize="725,51" sap2010:WorkflowViewState.IdRef="If_23">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Making categories and actions for form.&quot;]" />
+                                <If Condition="[Categories=&quot;&quot;]" DisplayName="Make Categories for Form" sap:VirtualizedContainerService.HintSize="875,1809" sap2010:WorkflowViewState.IdRef="If_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -1436,7 +1436,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <If Condition="[Actions=&quot;&quot;]" DisplayName="Make Actions for Form" sap:VirtualizedContainerService.HintSize="725,51" sap2010:WorkflowViewState.IdRef="If_24">
+                                <If Condition="[Actions=&quot;&quot;]" DisplayName="Make Actions for Form" sap:VirtualizedContainerService.HintSize="875,51" sap2010:WorkflowViewState.IdRef="If_24">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1588,7 +1588,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <If Condition="[ConditionCode=&quot;&quot;]" DisplayName="Make Condition for Form" sap:VirtualizedContainerService.HintSize="725,792" sap2010:WorkflowViewState.IdRef="If_59">
+                                <If Condition="[ConditionCode=&quot;&quot;]" DisplayName="Make Condition for Form" sap:VirtualizedContainerService.HintSize="875,992" sap2010:WorkflowViewState.IdRef="If_59">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1596,16 +1596,16 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[&quot;Category is empty&quot;]" />
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[&quot;Condition Code is empty&quot;]" />
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="346,644" sap2010:WorkflowViewState.IdRef="Sequence_220">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="346,844" sap2010:WorkflowViewState.IdRef="Sequence_220">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Removing Characters- Categories" sap:VirtualizedContainerService.HintSize="304,452" sap2010:WorkflowViewState.IdRef="Sequence_219">
+                                      <Sequence DisplayName="Removing Characters- Categories" sap:VirtualizedContainerService.HintSize="304,652" sap2010:WorkflowViewState.IdRef="Sequence_219">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="Categories" />
                                         </Sequence.Variables>
@@ -1636,6 +1636,22 @@
                                           </Assign.To>
                                           <Assign.Value>
                                             <InArgument x:TypeArguments="x:String">[ConditionCode.Replace("\","")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign DisplayName="Removing (&quot;new line&quot;)" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_116">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[ConditionCode]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[ConditionCode.Replace( Environment.NewLine,"")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign DisplayName="Removing Spaces" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_117">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[ConditionCode]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[ConditionCode.Replace(" ","")]</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                         <Assign DisplayName="Removing Quotation Marks" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_114">
@@ -1921,7 +1937,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">280,890 160,890 160,916.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Getting Attachments" sap:VirtualizedContainerService.HintSize="1450,3755" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                                    <Sequence DisplayName="Getting Attachments" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_127">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="strAttachments" />
                                         <Variable x:TypeArguments="njl:JArray" Name="json_attachments" />
