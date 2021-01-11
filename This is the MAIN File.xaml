@@ -248,12 +248,12 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[i &gt;= argMaxRun]" sap:VirtualizedContainerService.HintSize="1296,1473" sap2010:WorkflowViewState.IdRef="If_56">
+          <If Condition="[i &gt;= argMaxRun]" sap:VirtualizedContainerService.HintSize="1296,1535" sap2010:WorkflowViewState.IdRef="If_56">
             <If.Then>
               <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Not getting the next transaction item from queue as 1 form task is already created.&quot;]" />
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="917,1325" sap2010:WorkflowViewState.IdRef="Sequence_204">
+              <Sequence sap:VirtualizedContainerService.HintSize="917,1387" sap2010:WorkflowViewState.IdRef="Sequence_204">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -276,6 +276,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:GetQueueItem>
+                <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="875,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="GMailMessgeQueue">
+                  <ui:AddQueueItem.ItemInformation>
+                    <InArgument x:TypeArguments="x:String" x:Key="MessageId">17666fc0d2cd7ffc</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="hasAttachment">True</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="documentPortalLink">None</InArgument>
+                  </ui:AddQueueItem.ItemInformation>
+                </ui:AddQueueItem>
                 <If Condition="[TransactionItem is Nothing]" sap:VirtualizedContainerService.HintSize="875,883" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -511,70 +518,28 @@
                                   </upaf:WaitForFormTaskAndResume>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Record Approved TaskResults workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="RecordTaskResults_THAT WORKS.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_TaskObject">
-                                        <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="taskaction">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TaskAction" />
-                                      </InArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="first_category">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_cat1" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="fourth_category">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_cat4" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="third_category">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_cat3" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="second_category">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_cat2" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_days">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_days" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_hours">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_hours" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_loan_number">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="first_action">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_act1" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="second_action">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_act2" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="third_action">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_act3" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="email_id">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="messageId" />
-                                      </OutArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Sentiment">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Sentiment" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Request">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Request" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Question">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Question" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Urgent">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Urgent" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_TaskObject">[TaskData]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="taskaction">[TaskAction]</InArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="first_category">[actual_cat1]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="fourth_category">[actual_cat4]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="third_category">[actual_cat3]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="second_category">[actual_cat2]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_days">[actual_days]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_hours">[actual_hours]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="actual_loan_number">[actual_loannumber]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="first_action">[actual_act1]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="second_action">[actual_act2]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="third_action">[actual_act3]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="email_id">[messageId]</OutArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Sentiment">[Sentiment]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Request">[Request]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Question">[Question]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Urgent">[Urgent]</InArgument>
                                       <OutArgument x:TypeArguments="x:String" x:Key="template_chosen" />
-                                      <OutArgument x:TypeArguments="x:String" x:Key="template_text">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                      </OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="str_ForwardEmail">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ForwardMail" />
-                                      </OutArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_str_DownloadPath">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_DownloadPath+emailID" />
-                                      </InArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="str_AdditionalMailContent">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AdditionalMailContent" />
-                                      </OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="template_text">[actual_template]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="str_ForwardEmail">[Str_ForwardMail]</OutArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_str_DownloadPath">[str_DownloadPath+emailID]</InArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="str_AdditionalMailContent">[str_AdditionalMailContent]</OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
@@ -643,7 +608,7 @@
                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Carry Out Actions" sap:VirtualizedContainerService.HintSize="877,3593" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                            <Sequence DisplayName="Carry Out Actions" sap:VirtualizedContainerService.HintSize="877,2450" sap2010:WorkflowViewState.IdRef="Sequence_150">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="Action1" />
                                 <Variable x:TypeArguments="x:String" Name="Action2" />
@@ -658,14 +623,14 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="835,3501" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                              <Sequence DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="835,2358" sap2010:WorkflowViewState.IdRef="Sequence_146">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="793,3409" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="793,2266" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                                   <TryCatch.Variables>
                                     <Variable x:TypeArguments="scg:List(x:String)" Name="Ls_Actions" />
                                     <Variable x:TypeArguments="scg:List(x:String)" Name="Ls_Categories" />
@@ -677,7 +642,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="755,3182" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="755,2039" sap2010:WorkflowViewState.IdRef="Sequence_201">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -786,7 +751,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:LogMessage>
-                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action1" Expression="[actual_act1]" sap:VirtualizedContainerService.HintSize="713,607" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action1" Expression="[actual_act1]" sap:VirtualizedContainerService.HintSize="713,226" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                                         <Switch.Default>
                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;No action was taken for Action 1&quot;]" />
                                         </Switch.Default>
@@ -812,9 +777,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -823,6 +785,12 @@
                                               </OutArgument>
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
                                               </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
@@ -834,22 +802,12 @@
                                         </Sequence>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E01" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;ClientID&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;ClientSecret&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">[in_config("ClientID").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret">[in_config("ClientSecret").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -859,18 +817,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E02" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -880,18 +832,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E03" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -915,9 +861,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -927,11 +870,17 @@
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
                                               </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
+                                              </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </Sequence>
                                       </Switch>
-                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action2" Expression="[actual_act2]" sap:VirtualizedContainerService.HintSize="713,607" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action2" Expression="[actual_act2]" sap:VirtualizedContainerService.HintSize="713,226" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                                         <Switch.Default>
                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;No action was taken for Action 2&quot;]" />
                                         </Switch.Default>
@@ -956,9 +905,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -967,6 +913,12 @@
                                               </OutArgument>
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
                                               </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
@@ -978,18 +930,12 @@
                                         </Sequence>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E01" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -999,18 +945,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E02" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1020,18 +960,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E03" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_51" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1055,9 +989,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -1067,11 +998,17 @@
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
                                               </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
+                                              </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </Sequence>
                                       </Switch>
-                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action3" Expression="[actual_act3]" sap:VirtualizedContainerService.HintSize="713,607" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                      <Switch x:TypeArguments="x:String" DisplayName="Switch-Action3" Expression="[actual_act3]" sap:VirtualizedContainerService.HintSize="713,226" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                                         <Switch.Default>
                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;No action was taken for Action 3&quot;]" />
                                         </Switch.Default>
@@ -1096,9 +1033,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -1107,6 +1041,12 @@
                                               </OutArgument>
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
                                               </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
@@ -1118,18 +1058,12 @@
                                         </Sequence>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E01" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1139,18 +1073,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E02" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1160,18 +1088,12 @@
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="E03" DisplayName="Invoke SendThreading workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="SendThreading.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailID" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageId">[EmailID]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientId" />
                                             <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_template" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[actual_template]</InArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1196,9 +1118,6 @@
                                               <InArgument x:TypeArguments="x:String" x:Key="strAccessCodeURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;AccessCodeURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumber">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
-                                              </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="strUploadURL">
                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;uploadURL_UploadDoc&quot;).ToString" />
                                               </InArgument>
@@ -1207,6 +1126,12 @@
                                               </OutArgument>
                                               <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="in_Jobj_TaskData">
                                                 <mva:VisualBasicValue x:TypeArguments="upaf:FormTaskData" ExpressionText="TaskData" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="strLoanNumberFromActionCentre">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="actual_loannumber" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="StrLoanNumberFromAPI">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LoanNumber" />
                                               </InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
@@ -1225,31 +1150,15 @@
                                         <If.Else>
                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ForwardMail workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="ForwardMail.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="MessageId">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="emailID" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;ClientID&quot;).ToString" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_config(&quot;ClientSecret&quot;).ToString" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="MessageBody">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailContent" />
-                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="MessageId">[emailID]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_ClientId">[in_config("ClientID").ToString]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_ClientSecret">[in_config("ClientSecret").ToString]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="MessageBody">[EmailContent]</InArgument>
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_ResultId" />
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_str_ForwardMail">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ForwardMail" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_Ls_Attachments">
-                                                <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="Ls_AttachmentPath" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_str_AdditionalMailContent">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AdditionalMailContent" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_config" />
-                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_str_ForwardMail">[Str_ForwardMail]</InArgument>
+                                              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_Ls_Attachments">[Ls_AttachmentPath]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_str_AdditionalMailContent">[str_AdditionalMailContent]</InArgument>
+                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_config]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </If.Else>
