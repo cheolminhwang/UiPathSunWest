@@ -61,6 +61,7 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>UiPath.Web.Activities</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -290,7 +291,7 @@
                           <OutArgument x:TypeArguments="x:String">[Attachments]</OutArgument>
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">[msgJSON("attachments").tostring]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[if(msgJSON("hasAttachment").ToString.ToLower="true",msgJSON("attachments").tostring,"")]</InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
